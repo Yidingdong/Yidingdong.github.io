@@ -1,16 +1,7 @@
-/* ====================================
-   ABOUT ME - JAVASCRIPT
-   ==================================== */
-
-// ====================================
-// DARK MODE TOGGLE
-// ====================================
-
 const themeToggle = document.querySelector('.theme-toggle');
 const themeText = document.querySelector('.theme-text');
 const body = document.body;
 
-// Check for saved theme preference or default to light mode
 const currentTheme = localStorage.getItem('theme') || 'light';
 if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
@@ -22,7 +13,6 @@ if (currentTheme === 'dark') {
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     
-    // Save preference and update text
     const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
     themeText.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
     localStorage.setItem('theme', theme);
@@ -30,15 +20,9 @@ themeToggle.addEventListener('click', () => {
     console.log(`Theme switched to: ${theme}`);
 });
 
-
-// ====================================
-// LANGUAGE SELECTOR
-// ====================================
-
 const languageButtons = document.querySelectorAll('.lang-btn');
 const currentLanguage = localStorage.getItem('language') || 'de';
 
-// Set initial language
 setLanguage(currentLanguage);
 updateActiveButton(currentLanguage);
 
@@ -53,7 +37,6 @@ languageButtons.forEach(button => {
 });
 
 function setLanguage(lang) {
-    // Find all elements with language data attributes
     const elements = document.querySelectorAll('[data-de][data-en][data-zh]');
     
     elements.forEach(element => {
@@ -74,11 +57,6 @@ function updateActiveButton(lang) {
     });
 }
 
-
-// ====================================
-// SCROLL ANIMATIONS (Optional)
-// ====================================
-
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -93,7 +71,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe timeline items
 document.querySelectorAll('.timeline-item').forEach(item => {
     item.style.opacity = '0';
     item.style.transform = 'translateX(-20px)';
@@ -101,32 +78,19 @@ document.querySelectorAll('.timeline-item').forEach(item => {
     observer.observe(item);
 });
 
-
-// ====================================
-// HASH NAVIGATION
-// ====================================
-
-// Apply language when navigating to detail views
 window.addEventListener('hashchange', () => {
     const lang = localStorage.getItem('language') || 'de';
     setLanguage(lang);
     
-    // Scroll to top when navigating
     window.scrollTo(0, 0);
     
     console.log(`Navigated to: ${window.location.hash || 'timeline'}`);
 });
 
-// Apply language on initial load if there's a hash
 if (window.location.hash) {
     const lang = localStorage.getItem('language') || 'de';
     setLanguage(lang);
 }
-
-
-// ====================================
-// CONSOLE LOG
-// ====================================
 
 console.log('Timeline Website loaded successfully!');
 console.log(`Current theme: ${currentTheme}`);
