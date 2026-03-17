@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark-mode');}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seite nicht gefunden – Yiding Ma">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>404 – Yiding Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <h1 class="name" data-de="Yiding Ma" data-en="Yiding Ma" data-zh="马亦丁"></h1>
+                <div class="controls">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="de">DE</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
+                    </div>
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <span class="theme-text">DARK</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a href="index.html" class="nav-link" data-de="Start" data-en="Home" data-zh="首页">Start</a>
+                <a href="timeline.html" class="nav-link" data-de="Zeitstrahl" data-en="Timeline" data-zh="时间线">Zeitstrahl</a>
+                <a href="blog.html" class="nav-link" data-de="Blog" data-en="Blog" data-zh="博客">Blog</a>
+                <a href="ideas.html" class="nav-link" data-de="Ideen" data-en="Ideas" data-zh="主意">Ideen</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <div class="container">
+            <section class="home-greeting" style="padding-top: 5rem;">
+                <p class="greeting-text" style="font-size: 4rem; font-style: normal;">404</p>
+                <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 1.1rem;"
+                   data-de="Diese Seite gibt es nicht."
+                   data-en="This page doesn't exist."
+                   data-zh="页面不存在。">Diese Seite gibt es nicht.</p>
+                <p style="margin-top: 1.5rem;">
+                    <a href="index.html"
+                       style="color: var(--text-secondary); text-decoration: underline; text-decoration-color: var(--border-color);"
+                       data-de="← Zurück zur Startseite"
+                       data-en="← Back to home"
+                       data-zh="← 返回首页">← Zurück zur Startseite</a>
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

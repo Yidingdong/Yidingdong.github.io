@@ -1,23 +1,23 @@
-const themeToggle = document.querySelector('.theme-toggle');
+﻿const themeToggle = document.querySelector('.theme-toggle');
 const themeText = document.querySelector('.theme-text');
-const body = document.body;
+const html = document.documentElement;
 
+// Theme is applied early via inline <script> in <head> to prevent flash.
+// Here we only sync the button label.
 const currentTheme = localStorage.getItem('theme') || 'light';
 if (currentTheme === 'dark') {
-    body.classList.add('dark-mode');
+    html.classList.add('dark-mode');
     themeText.textContent = 'LIGHT';
 } else {
     themeText.textContent = 'DARK';
 }
 
 themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    
-    const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    html.classList.toggle('dark-mode');
+
+    const theme = html.classList.contains('dark-mode') ? 'dark' : 'light';
     themeText.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
     localStorage.setItem('theme', theme);
-    
-    console.log(`Theme switched to: ${theme}`);
 });
 
 const languageButtons = document.querySelectorAll('.lang-btn');
@@ -42,7 +42,7 @@ function setLanguage(lang) {
     elements.forEach(element => {
         const text = element.getAttribute(`data-${lang}`);
         if (text) {
-            element.textContent = text;
+            element.innerHTML = text;
         }
     });
 }
@@ -56,27 +56,6 @@ function updateActiveButton(lang) {
         }
     });
 }
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateX(0)';
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.timeline-item').forEach(item => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateX(-20px)';
-    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(item);
-});
 
 window.addEventListener('hashchange', () => {
     const lang = localStorage.getItem('language') || 'de';

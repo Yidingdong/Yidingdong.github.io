@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark-mode');}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ideen und Gedanken von Yiding Ma.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Ideen – Yiding Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <h1 class="name" data-de="Yiding Ma" data-en="Yiding Ma" data-zh="马亦丁"></h1>
+                <div class="controls">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="de">DE</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
+                    </div>
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <span class="theme-text">DARK</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a href="index.html" class="nav-link" data-de="Start" data-en="Home" data-zh="首页">Start</a>
+                <a href="timeline.html" class="nav-link" data-de="Zeitstrahl" data-en="Timeline" data-zh="时间线">Zeitstrahl</a>
+                <a href="blog.html" class="nav-link" data-de="Blog" data-en="Blog" data-zh="博客">Blog</a>
+                <a href="ideas.html" class="nav-link active" data-de="Ideen" data-en="Ideas" data-zh="主意">Ideen</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main – sticky note pinboard of ideas, all content by Yiding Ma -->
+    <main class="page-main">
+        <div class="container">
+            <h2 class="page-heading" data-de="Ideen" data-en="Ideas" data-zh="主意">Ideen</h2>
+            <p class="page-subheading"
+               data-de="[Platzhalter]"
+               data-en="[Platzhalter]"
+               data-zh="[占位符]">[Platzhalter]</p>
+
+            <!-- Sticky note pinboard – unorganized, all content by Yiding Ma -->
+            <div class="ideas-board">
+
+                <article class="sticky-note ideas-note">
+                    <h3 class="sticky-title"
+                        data-de="[Platzhalter]"
+                        data-en="[Platzhalter]"
+                        data-zh="[占位符]">[Platzhalter]</h3>
+                    <p class="sticky-content"
+                       data-de="[Platzhalter]"
+                       data-en="[Platzhalter]"
+                       data-zh="[占位符]">[Platzhalter]</p>
+                </article>
+
+                <article class="sticky-note ideas-note">
+                    <h3 class="sticky-title"
+                        data-de="[Platzhalter]"
+                        data-en="[Platzhalter]"
+                        data-zh="[占位符]">[Platzhalter]</h3>
+                    <p class="sticky-content"
+                       data-de="[Platzhalter]"
+                       data-en="[Platzhalter]"
+                       data-zh="[占位符]">[Platzhalter]</p>
+                </article>
+
+                <article class="sticky-note ideas-note">
+                    <h3 class="sticky-title"
+                        data-de="[Platzhalter]"
+                        data-en="[Platzhalter]"
+                        data-zh="[占位符]">[Platzhalter]</h3>
+                    <p class="sticky-content"
+                       data-de="[Platzhalter]"
+                       data-en="[Platzhalter]"
+                       data-zh="[占位符]">[Platzhalter]</p>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Yiding Ma</p>
+            <div class="footer-contact">
+                <a href="https://github.com/Yidingdong" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <span class="footer-sep">&middot;</span>
+                <a href="mailto:mayiding@gmx.de" class="footer-link">mayiding@gmx.de</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.ideas-note').forEach(function(note) {
+            note.addEventListener('click', function() {
+                var wasExpanded = note.classList.contains('expanded');
+                document.querySelectorAll('.ideas-note').forEach(function(n) { n.classList.remove('expanded'); });
+                if (!wasExpanded) note.classList.add('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
