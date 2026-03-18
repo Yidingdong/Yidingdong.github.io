@@ -50,20 +50,32 @@ filterButtons.forEach(btn => {
             }
         });
 
-        // Auto-collapse groups that have no visible entries; expand those that do
+        // Show placeholder in empty groups; keep all groups open; scroll to first match
         groups.forEach(group => {
-            const body  = group.querySelector('.timeline-group-body');
-            const items = group.querySelectorAll('.timeline-item[data-tags]');
+            const body        = group.querySelector('.timeline-group-body');
+            const items       = group.querySelectorAll('.timeline-item[data-tags]');
+            const placeholder = group.querySelector('.filter-empty-msg');
             const visibleCount = [...items].filter(i => i.style.display !== 'none').length;
 
-            if (visibleCount === 0 && filter !== 'all') {
-                group.classList.remove('open');
-                body.classList.add('collapsed');
-            } else {
-                group.classList.add('open');
-                body.classList.remove('collapsed');
-            }
+            placeholder.hidden = (visibleCount > 0 || filter === 'all');
+            group.classList.add('open');
+            body.classList.remove('collapsed');
         });
+
+        // Scroll to first group that has matching items
+        if (filter !== 'all') {
+            const firstMatch = [...groups].find(group => {
+                const items = group.querySelectorAll('.timeline-item[data-tags]');
+                return [...items].some(i => i.style.display !== 'none');
+            });
+            if (firstMatch) {
+                setTimeout(() => {
+                    const headerOffset = document.querySelector('.header')?.offsetHeight || 0;
+                    const top = firstMatch.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+                    window.scrollTo({ behavior: 'smooth', top });
+                }, 50);
+            }
+        }
     });
 });
 
@@ -90,3 +102,19 @@ document.querySelectorAll('.timeline-item').forEach(item => {
     item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(item);
 });
+
+
+// ── ANTI-CHRONOLOGICAL ORDER ─────────────────────────────────────────────
+// Reverse group order (newest first) and items within each group
+const groupsContainer = document.querySelector('.timeline-groups');
+if (groupsContainer) {
+    [...groupsContainer.querySelectorAll(':scope > .timeline-group')]
+        .reverse()
+        .forEach(g => groupsContainer.appendChild(g));
+
+    document.querySelectorAll('.timeline-group-inner').forEach(inner => {
+        [...inner.querySelectorAll(':scope > .timeline-item')]
+            .reverse()
+            .forEach(item => inner.appendChild(item));
+    });
+}

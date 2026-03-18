@@ -845,6 +845,15 @@ html.dark-mode .detail-container {
     border-color: var(--accent-color);
 }
 
+/* Placeholder shown in groups with no matching items */
+.filter-empty-msg {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 0.5rem 0 0.75rem;
+    margin: 0;
+}
+
 /* Hide filter bar and groups when a detail view is active */
 body:has(.detail-view:target) .filter-bar,
 body:has(.detail-view:target) .timeline-groups {
