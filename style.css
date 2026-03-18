@@ -460,23 +460,27 @@ html.dark-mode .detail-container {
         color: var(--text-primary);
     }
 
-    /* Collapsed navbar — smooth slide down on open */
+    /* Collapsed navbar — only max-height animates; no border/margin movement */
     .navbar {
         max-height: 0;
         overflow: hidden;
-        padding-top: 0;
         margin-top: 0;
+        padding-top: 0;
         border-top: none;
         flex-wrap: wrap;
-        gap: 0.35rem;
-        transition: max-height 0.25s ease, padding-top 0.2s ease, margin-top 0.2s ease;
+        gap: 0.25rem;
+        transition: max-height 0.25s ease;
     }
 
     .navbar.nav-open {
-        max-height: 220px;
-        padding-top: 0.5rem;
-        margin-top: 0.4rem;
-        border-top: 1px solid var(--border-color);
+        max-height: 200px;
+        padding-bottom: 0.4rem;
+    }
+
+    /* Tighter highlight in dropdown — remove oversized touch min-height */
+    .navbar .nav-link {
+        padding: 0.5rem 0.85rem;
+        min-height: unset;
     }
 
     .timeline-item {
