@@ -1,0 +1,610 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <script>if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark-mode');}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yiding Mas Lebensweg als interaktiver Zeitstrahl – Schule, Projekte, Auszeichnungen und mehr.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Timeline – Yiding Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <h1 class="name" data-de="Yiding Ma" data-en="Yiding Ma" data-zh="马亦丁"></h1>
+                <div class="controls">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="de">DE</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
+                    </div>
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <span class="theme-text">DARK</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="navbar">
+                <a href="index.html" class="nav-link" data-de="Start" data-en="Home" data-zh="首页">Start</a>
+                <a href="timeline.html" class="nav-link active" data-de="Zeitstrahl" data-en="Timeline" data-zh="时间线">Zeitstrahl</a>
+                <a href="blog.html" class="nav-link" data-de="Blog" data-en="Blog" data-zh="博客">Blog</a>
+                <a href="ideas.html" class="nav-link" data-de="Ideen" data-en="Ideas" data-zh="主意">Ideen</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Timeline View -->
+    <main id="timeline-view" class="timeline-container">
+        <div class="container">
+            <h2 class="timeline-heading"
+                data-de="Mein Leben als Zeitstrahl"
+                data-en="My Life in a nutshell"
+                data-zh="我的人生"></h2>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <span class="filter-label" data-de="Filtern:" data-en="Filter:" data-zh="筛选:">Filtern:</span>
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-filter="all" data-de="Alle" data-en="All" data-zh="全部">Alle</button>
+                    <button class="filter-tag" data-filter="education" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</button>
+                    <button class="filter-tag" data-filter="achievements" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</button>
+                    <button class="filter-tag" data-filter="personal" data-de="Persönliches" data-en="Personal Milestones" data-zh="个人里程碑">Persönliches</button>
+                    <button class="filter-tag" data-filter="projects" data-de="Projekte" data-en="Side Projects" data-zh="项目">Projekte</button>
+                    <button class="filter-tag" data-filter="volunteering" data-de="Ehrenamt" data-en="Volunteering" data-zh="志愿服务">Ehrenamt</button>
+                    <button class="filter-tag" data-filter="career" data-de="Berufserfahrung" data-en="Career" data-zh="职业">Berufserfahrung</button>
+                </div>
+            </div>
+
+            <!-- Timeline Groups -->
+            <div class="timeline-groups">
+
+                <!-- ── GROUP 1: Kindheit ── -->
+                <div class="timeline-group open" id="group-childhood">
+                    <button class="timeline-group-header">
+                        <span class="group-title" data-de="Kindheit" data-en="Childhood" data-zh="童年">Kindheit</span>
+                        <span class="group-period">2008 – 2014</span>
+                        <span class="group-chevron">▼</span>
+                    </button>
+                    <div class="timeline-group-body">
+                        <div class="timeline-group-inner">
+
+                            <!-- Geburt -->
+                            <div class="timeline-item" data-tags="personal">
+                                <div class="timeline-marker"></div>
+                                <a href="#birth" class="timeline-content">
+                                    <span class="timeline-year">2008</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Meine Geburt"
+                                        data-en="The Birth of Yiding"
+                                        data-zh="我出生啦"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Ich glaube, da gibt's nicht viel zu sagen"
+                                       data-en="Well, nothing much to say about this, right?"
+                                       data-zh="这点应该不用过多解释的，对吧?"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Persönliches" data-en="Personal" data-zh="个人">Persönliches</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Kindergarten -->
+                            <div class="timeline-item" data-tags="personal">
+                                <div class="timeline-marker"></div>
+                                <a href="#Kindergarten" class="timeline-content">
+                                    <span class="timeline-year">2010 – 2014</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Die Kindergartenerfahrung"
+                                        data-en="My time in the kindergarten"
+                                        data-zh="美妙的幼儿园时光啊"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Von Kiel bis Issum, bis hin zu Böblingen. Ich war insgesamt an drei verschiedenen Kindergärten"
+                                       data-en="Born in Kiel, moved to Issum, and then to Böblingen, I've attended three different kindergartens"
+                                       data-zh="老是搬家，小时候的那几年总共个上了三所幼儿园"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Persönliches" data-en="Personal" data-zh="个人">Persönliches</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── GROUP 2: Grundschule ── -->
+                <div class="timeline-group open" id="group-primary">
+                    <button class="timeline-group-header">
+                        <span class="group-title" data-de="Grundschule" data-en="Primary School" data-zh="小学">Grundschule</span>
+                        <span class="group-period">2014 – 2018</span>
+                        <span class="group-chevron">▼</span>
+                    </button>
+                    <div class="timeline-group-body">
+                        <div class="timeline-group-inner">
+
+                            <!-- Wilhelm-Hauff-Schule -->
+                            <div class="timeline-item" data-tags="education">
+                                <div class="timeline-marker"></div>
+                                <a href="#Grundschule1" class="timeline-content">
+                                    <span class="timeline-year">09/2014 – 07/2016</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Wilhelm-Hauff-Schule"
+                                        data-en="Wilhelm-Hauff Primary School"
+                                        data-zh="威廉-豪夫小学"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Meine allererste Grundschule. Ich war sogar mal Schüler des Monats!"
+                                       data-en="My first primary school. I've even been student of the month once!"
+                                       data-zh="我的第一所小学。我还获得过月度学生奖！"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Flattichschule -->
+                            <div class="timeline-item" data-tags="education">
+                                <div class="timeline-marker"></div>
+                                <a href="#Grundschule2" class="timeline-content">
+                                    <span class="timeline-year">09/2016 – 07/2018</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Flattichschule"
+                                        data-en="Flattich Primary School"
+                                        data-zh="Flattich-小学"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Neue Schule, neues Umfeld. Von der 3. auf die 4. Klasse gab es obendrauf noch einen Klassenlehrerwechsel."
+                                       data-en="New school, new environment. There also was a change of teachers from 3rd to 4th grade."
+                                       data-zh="新的小学校，新的环境。四年级还换了班主任。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Hector Kinderakademie – Enigma -->
+                            <div class="timeline-item" data-tags="education achievements">
+                                <div class="timeline-marker"></div>
+                                <a href="#HectorKinderakademie" class="timeline-content">
+                                    <span class="timeline-year">02/2018 – 07/2018</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Hector-Kinderakademie"
+                                        data-en="Hector Children's Academy"
+                                        data-zh="Hector-儿童学院"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Enigma – Rund um Codes und Geheimschriften"
+                                       data-en="Enigma – codes and secret writing"
+                                       data-zh="Enigma – 密码与暗语的世界"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                        <span class="tag-badge" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── GROUP 3: Gymnasium – Mittelstufe ── -->
+                <div class="timeline-group open" id="group-gymnasium">
+                    <button class="timeline-group-header">
+                        <span class="group-title" data-de="Gymnasium" data-en="Gymnasium" data-zh="初中">Gymnasium</span>
+                        <span class="group-period">2018 – 2024</span>
+                        <span class="group-chevron">▼</span>
+                    </button>
+                    <div class="timeline-group-body">
+                        <div class="timeline-group-inner">
+
+                            <!-- KKSt Hochbegabtenzug -->
+                            <div class="timeline-item" data-tags="education">
+                                <div class="timeline-marker"></div>
+                                <a href="#KKSt" class="timeline-content">
+                                    <span class="timeline-year">2018 – 2024</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Hochbegabtenzug am Königin-Katharina-Stift-Gymnasium"
+                                        data-en="Gifted class at Königin-Katharina-Stift Gymnasium"
+                                        data-zh="Königin-Katharina-Stift-中学，高智商班"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Besuch des Hochbegabtenzugs – ein landesweites Förderprogramm für hochbegabte Schülerinnen und Schüler des Landes Baden-Württemberg."
+                                       data-en="Attended the Hochbegabtenzug – a state-wide gifted programme for highly talented students in Baden-Württemberg, Germany."
+                                       data-zh="就读于巴登-符腾堡州政府设立的高才生促进班（Hochbegabtenzug）。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Nachhilfelehrer Hui-Education -->
+                            <div class="timeline-item" data-tags="volunteering">
+                                <div class="timeline-marker"></div>
+                                <a href="#Nachhilfe" class="timeline-content">
+                                    <span class="timeline-year">12/2023 – heute</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Nachhilfelehrer bei Hui-Education e.V."
+                                        data-en="Tutor at Hui-Education e.V."
+                                        data-zh="Hui-Education e.V. 辅导老师"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Ehrenamtliche Nachhilfetätigkeit beim gemeinnützigen Verein Hui-Education e.V. Unterstützung von Schülerinnen und Schülern in verschiedenen Fächern."
+                                       data-en="Volunteer tutoring at the non-profit association Hui-Education e.V. Supporting students across various subjects."
+                                       data-zh="在公益协会Hui-Education e.V.参与志愿辅导，帮助学生提高各科成绩。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Ehrenamt" data-en="Volunteering" data-zh="志愿服务">Ehrenamt</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- HTML-AG -->
+                            <div class="timeline-item" data-tags="projects education">
+                                <div class="timeline-marker"></div>
+                                <a href="#HTML" class="timeline-content">
+                                    <span class="timeline-year">09/2023 – 07/2024</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Leitung einer HTML-AG an der Schule"
+                                        data-en="Leading an HTML course at school"
+                                        data-zh="组建一个HTML课程"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Gemeinsam mit einem Mitschüler leitete ich eine freiwillige HTML/CSS-AG für rund 20 Schülerinnen und Schüler der Klassen 5–7. Ein Schuljahr lang, je 1,5 Stunden pro Woche."
+                                       data-en="Together with a classmate, I ran a voluntary HTML/CSS course for around 20 students in grades 5–7. One full school year, 1.5 hours a week."
+                                       data-zh="和同学共同带领一个HTML/CSS兴趣班，约20名5至7年级学生参与，每周上课1.5小时，持续一个学年。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Projekte" data-en="Side Projects" data-zh="项目">Projekte</span>
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── GROUP 4: Oberstufe / Senior Years ── -->
+                <div class="timeline-group open" id="group-senior">
+                    <button class="timeline-group-header">
+                        <span class="group-title" data-de="gymnasiale Oberstufe" data-en="Senior Years" data-zh="高中">gymnasiale Oberstufe</span>
+                        <span class="group-period">2024 – 2026</span>
+                        <span class="group-chevron">▼</span>
+                    </button>
+                    <div class="timeline-group-body">
+                        <div class="timeline-group-inner">
+
+                            <!-- Oberstufe KKSt -->
+                            <div class="timeline-item" data-tags="education">
+                                <div class="timeline-marker"></div>
+                                <a href="#KKSt2" class="timeline-content">
+                                    <span class="timeline-year">2024 – 2026</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Oberstufe am Königin-Katharina-Stift-Gymnasium"
+                                        data-en="Senior years at Königin-Katharina-Stift Gymnasium"
+                                        data-zh="Königin-Katharina-Stift-中学，高中那几年"></h2>
+                                    <p class="timeline-description"
+                                       data-de="[Platzhalter – Beschreibung von Yiding Ma ausfüllen]"
+                                       data-en="[Placeholder – to be filled in by Yiding Ma]"
+                                       data-zh="[占位符 – 由马亦丁填写]"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Entrepreneurship Talent Academy -->
+                            <div class="timeline-item" data-tags="achievements">
+                                <div class="timeline-marker"></div>
+                                <a href="#ETA" class="timeline-content">
+                                    <span class="timeline-year">04/2025 – 09/2025</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Entrepreneurship Talent Academy"
+                                        data-en="Entrepreneurship Talent Academy"
+                                        data-zh="创业才能学院"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Stipendienprogramm der Stiftung der Deutschen Wirtschaft. Workshops &amp; Kompetenztrainings in Design Thinking, Business Model Canvas und Pitching."
+                                       data-en="Scholarship program by the Foundation of German Business. Workshops &amp; skills training in Design Thinking, Business Model Canvas, and Pitching."
+                                       data-zh="德国经济基金会奖学项目，工作坊和技能培训。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- HLRS Stipendium -->
+                            <div class="timeline-item" data-tags="achievements education">
+                                <div class="timeline-marker"></div>
+                                <a href="#HLRS" class="timeline-content">
+                                    <span class="timeline-year">11/2024 – 07/2025</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Förderstipendium am Höchstleistungsrechenzentrum Stuttgart"
+                                        data-en="Scholarship at the High-Performance Computing Center Stuttgart"
+                                        data-zh="斯图加特高性能计算中心奖学金"></h2>
+                                    <p class="timeline-description"
+                                       data-de='Förderstipendium im Rahmen des Projekts &quot;Simulierte Welten&quot;. Projektthema: &quot;Deploying and optimizing an automatic grading AI&quot;. Aufgaben: Deployment-Infrastruktur mit Docker, Test- und CI/CD-Prozesse, Anwendung von KI, Prompt-Engineering und Benchmarking.'
+                                       data-en='Scholarship as part of the project &quot;Simulierte Welten&quot;. Project topic: &quot;Deploying and optimizing an automatic grading AI&quot;. Tasks: deployment infrastructure with Docker, testing and CI/CD pipelines, application of AI, prompt engineering, and benchmarking.'
+                                       data-zh='&quot;Simulierte Welten&quot;项目奖学金。项目主题：自动评分AI的部署与优化。任务包括：Docker部署、CI/CD流程、AI应用、Prompt工程与基准测试。'></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</span>
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Frühstudium -->
+                            <div class="timeline-item" data-tags="education achievements">
+                                <div class="timeline-marker"></div>
+                                <a href="#Frühstudium" class="timeline-content">
+                                    <span class="timeline-year">10/2025 – 03/2026</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Frühstudium an der Universität Stuttgart"
+                                        data-en="Early Studies at the University of Stuttgart"
+                                        data-zh="斯图加特大学早读生"></h2>
+                                    <p class="timeline-description"
+                                       data-de='Modul "Einführung in die Informatik"'
+                                       data-en='Module "Introduction to Computer Science"'
+                                       data-zh='计算机入门课'></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                        <span class="tag-badge" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- FIRST Tech Challenge -->
+                            <div class="timeline-item" data-tags="projects achievements">
+                                <div class="timeline-marker"></div>
+                                <a href="#FTC" class="timeline-content">
+                                    <span class="timeline-year">09/2025 – 07/2026</span>
+                                    <h2 class="timeline-title"
+                                        data-de="FIRST Tech Challenge"
+                                        data-en="FIRST Tech Challenge"
+                                        data-zh="FIRST Tech Challenge"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Internationaler Robotik-Wettbewerb. Jedes Jahr neue Challenges, die man mit einem selbstgebauten Roboter lösen muss. Meine Rolle: Programmierung der Robotersteuerung in Java."
+                                       data-en="International robotics competition. New challenges every year that you have to solve with a self-built robot. My role: programming the robot control system in Java."
+                                       data-zh="国际机器人大赛。每年必须用自建机器人完成新的挑战。我的职责：用Java编程机器人控制系统。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Projekte" data-en="Side Projects" data-zh="项目">Projekte</span>
+                                        <span class="tag-badge" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- YEEP + Cellios -->
+                            <div class="timeline-item" data-tags="achievements">
+                                <div class="timeline-marker"></div>
+                                <a href="#YEEP" class="timeline-content">
+                                    <span class="timeline-year">09/2025 – 08/2026</span>
+                                    <h2 class="timeline-title"
+                                        data-de="YEEP-Stipendiat"
+                                        data-en="YEEP Scholar"
+                                        data-zh="YEEP栽培生"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Das Young Entrepreneurs Excellence Program ist ein 12-monatiges Stipendienprogramm der NXTGN Landesinitiative, das junge Menschen auf dem Weg in die Gründung begleitet. Im Rahmen des Programms: Unternehmenschallenge mit dem Start-Up \"Cellios\" – Programmierung eines 3D-Simulators für Kabelkonfektionszellen."
+                                       data-en="The Young Entrepreneurs Excellence Program is a 12-month scholarship by the NXTGN initiative supporting young people on their path into entrepreneurship. As part of the program: company challenge with start-up \"Cellios\" – programming a 3D simulator for cable assembly cells."
+                                       data-zh="NXTGN州级项目支持的一个12个月的奖学项目，项目内容包括与Cellios公司合作编程一个3D仿真器。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</span>
+                                        <span class="tag-badge" data-de="Projekte" data-en="Side Projects" data-zh="项目">Projekte</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Abitur -->
+                            <div class="timeline-item" data-tags="education achievements">
+                                <div class="timeline-marker"></div>
+                                <a href="#KKSt3" class="timeline-content">
+                                    <span class="timeline-year">07/2026</span>
+                                    <h2 class="timeline-title"
+                                        data-de="Abitur"
+                                        data-en="Abitur"
+                                        data-zh="高中毕业"></h2>
+                                    <p class="timeline-description"
+                                       data-de="Aktuell 12. Klasse. Leistungskurse: Mathematik, Wirtschaft, Physik. Aktueller Notenschnitt: 1,1. Voraussichtlicher Abschluss: Abitur 07/2026."
+                                       data-en="Currently in 12th grade. Advanced courses: Mathematics, Economics, Physics. Current GPA equivalent: 1.1. Expected graduation: Abitur 07/2026."
+                                       data-zh="目前就读12年级。主修科目：数学、经济、物理。当前均分：1.1。预计于2026年7月参加Abitur考试。"></p>
+                                    <div class="tag-badges">
+                                        <span class="tag-badge" data-de="Bildungsweg" data-en="Education" data-zh="教育">Bildungsweg</span>
+                                        <span class="tag-badge" data-de="Erfolge" data-en="Achievements" data-zh="成就">Erfolge</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.timeline-groups -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Yiding Ma</p>
+            <div class="footer-contact">
+                <a href="https://github.com/Yidingdong" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <span class="footer-sep">&middot;</span>
+                <a href="mailto:mayiding@gmx.de" class="footer-link">mayiding@gmx.de</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detail views (shown via CSS :target) -->
+
+    <article id="birth" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Geburt" data-en="Birth" data-zh="出生"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="Kindergarten" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Die Kindergartenerfahrung" data-en="My Kindergarten Years" data-zh="幼儿园时光"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="Grundschule1" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Wilhelm-Hauff-Schule" data-en="Wilhelm-Hauff Primary School" data-zh="威廉-豪夫小学"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="Grundschule2" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Flattichschule" data-en="Flattich Primary School" data-zh="Flattich-小学"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="HectorKinderakademie" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Hector-Kinderakademie" data-en="Hector Children's Academy" data-zh="Hector-儿童学院"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="KKSt" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Hochbegabtenzug am KKSt" data-en="Gifted Class at KKSt" data-zh="KKSt高智商班"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="HTML" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Leitung der HTML-AG" data-en="Leading the HTML Course" data-zh="HTML课程"></h1>
+            <div class="detail-content">
+                <p data-de="Gemeinsam mit einem Mitschüler leitete ich eine freiwillige AG an unserer Schule. Wir unterrichteten rund 20 Schülerinnen und Schüler der Klassen 5 bis 7 in HTML und CSS – je 1,5 Stunden pro Woche, über ein ganzes Schuljahr."
+                   data-en="Together with a classmate, I led a voluntary after-school course at our school. We taught around 20 students from grades 5 to 7 HTML and CSS – 1.5 hours per week for a full school year."
+                   data-zh="我和一位同学共同在学校开办了一个自愿课外兴趣班，向约20名5至7年级的同学教授HTML和CSS，每周上1.5小时，持续了整个学年。"></p>
+                <h2 data-de="Aufgabenteilung" data-en="How we split the work" data-zh="分工"></h2>
+                <p data-de="Ich erstellte das Curriculum und bereitete die PowerPoint-Präsentationen vor. Mein Mitschüler übernahm die Arbeitsblätter."
+                   data-en="I wrote the curriculum and prepared the PowerPoint slides. My classmate took care of the worksheets."
+                   data-zh="我负责编写课程大纲和制作PPT，同学负责制作工作表。"></p>
+                <h2 data-de="Abschlussprojekt" data-en="Final project" data-zh="期末项目"></h2>
+                <p data-de="Die Schülerinnen und Schüler programmierten am Ende eine eigene kleine &quot;Über mich&quot;-Website mit plain HTML und CSS."
+                   data-en="At the end, the students each built their own simple &quot;About Me&quot; website using plain HTML and CSS."
+                   data-zh="课程末尾，每位同学都用纯HTML和CSS制作了一个简单的“关于我”网页。"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="KKSt2" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Oberstufe am KKSt" data-en="Senior Years at KKSt" data-zh="KKSt高中阶段"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="HLRS" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Förderstipendium am HLRS" data-en="Scholarship at HLRS" data-zh="HLRS奖学金"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="Frühstudium" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Frühstudium an der Uni Stuttgart" data-en="Early Studies at University of Stuttgart" data-zh="斯图加特大学早读生"></h1>
+            <div class="detail-content">
+                <p data-de='Modul: &quot;Einführung in die Informatik&quot; an der Universität Stuttgart (Wintersemester 2025/26).'
+                   data-en='Module: &quot;Introduction to Computer Science&quot; at the University of Stuttgart (winter semester 2025/26).'
+                   data-zh='课程：&quot;计算机入门&quot;，斯图加特大学（2025/26冬季学期）。'></p>
+                <h2 data-de="Meine Erfahrung" data-en="My Experience" data-zh="我的感受"></h2>
+                <p data-de="[Platzhalter – persönliche Erfahrung von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – fill in your personal experience]"
+                   data-zh="[占位符 – 填写个人感受与体验]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="FTC" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="FIRST Tech Challenge" data-en="FIRST Tech Challenge" data-zh="FIRST Tech Challenge"></h1>
+            <div class="detail-content">
+                <p data-de="Internationaler Robotik-Wettbewerb, bei dem jedes Jahr eine neue Challenge mit einem selbstgebauten Roboter gelöst werden muss."
+                   data-en="International robotics competition where a new challenge must be solved each year with a self-built robot."
+                   data-zh="国际机器人大赛，每年需用自建机器人完成新的挑战。"></p>
+                <h2 data-de="Meine Rolle" data-en="My Role" data-zh="我的职责"></h2>
+                <p data-de="Programmierung der Robotersteuerung in Java."
+                   data-en="Programming the robot control system in Java."
+                   data-zh="用Java编程机器人控制系统。"></p>
+                <h2 data-de="Decode Session" data-en="Decode Session" data-zh="Decode Session"></h2>
+                <p data-de="[Platzhalter – Erfahrungsbericht zur Decode Session von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – fill in your experience from the Decode session]"
+                   data-zh="[占位符 – 填写Decode环节的个人经历]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="YEEP" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="YEEP-Stipendium" data-en="YEEP Scholarship" data-zh="YEEP奖学金计划"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <article id="KKSt3" class="detail-view">
+        <div class="detail-container">
+            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
+            <h1 class="detail-title" data-de="Abitur" data-en="Abitur" data-zh="高中毕业"></h1>
+            <div class="detail-content">
+                <p data-de="[Platzhalter – Inhalt von Yiding Ma ausfüllen]"
+                   data-en="[Placeholder – to be filled in by Yiding Ma]"
+                   data-zh="[占位符 – 由马亦丁填写]"></p>
+            </div>
+        </div>
+    </article>
+
+    <script src="script.js"></script>
+    <script src="timeline.js"></script>
+</body>
+</html>

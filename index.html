@@ -1,307 +1,258 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <script>if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark-mode');}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yiding - A website about me</title>
+    <meta name="description" content="Persönliche Website von Yiding Ma – Schüler, Entwickler, Schüler-Stipendiat. Zeitstrahl, Blog und Ideen.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Yiding Ma</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1 class="name" data-de="Yiding Ma" data-en="Yiding Ma" data-zh="马亦丁"></h1>
-            <div class="controls">
-                <!-- Language Selector -->
-                <div class="language-selector">
-                    <button class="lang-btn active" data-lang="de">DE</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="zh">中文</button>
+            <div class="header-top">
+                <h1 class="name" data-de="Yiding Ma" data-en="Yiding Ma" data-zh="马亦丁"></h1>
+                <div class="controls">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="de">DE</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="zh">中文</button>
+                    </div>
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <span class="theme-text">DARK</span>
+                    </button>
                 </div>
-                <!-- Dark Mode Toggle -->
-                <button class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <span class="theme-text">DARK</span>
-                </button>
             </div>
+            <nav class="navbar">
+                <a href="index.html" class="nav-link active" data-de="Start" data-en="Home" data-zh="首页">Start</a>
+                <a href="timeline.html" class="nav-link" data-de="Zeitstrahl" data-en="Timeline" data-zh="时间线">Zeitstrahl</a>
+                <a href="blog.html" class="nav-link" data-de="Blog" data-en="Blog" data-zh="博客">Blog</a>
+                <a href="ideas.html" class="nav-link" data-de="Ideen" data-en="Ideas" data-zh="主意">Ideen</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Timeline View -->
-    <main id="timeline-view" class="timeline-container">
+    <!-- Main content -->
+    <main class="page-main">
         <div class="container">
-            <h2 class="timeline-heading" 
-                data-de="Mein Leben als Zeitstrahl" 
-                data-en="My Life in Timestamps" 
-                data-zh="我的人生"></h2>
-            
-            <!-- Timeline Item: Geburt -->
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <a href="#birth" class="timeline-content">
-                    <span class="timeline-year">2008</span>
-                    <h2 class="timeline-title" 
-                        data-de="Meine Geburt" 
-                        data-en="My Birth" 
-                        data-zh="我出生啦">Geburt</h2>
-                    <p class="timeline-description" 
-                       data-de="Ich glaube, da gibt's nicht viel zu sagen" 
-                       data-en="Well, nothing much to say about this, right?" 
-                       data-zh="这点应该不用过多解释的，对吧?"></p>
-                </a>
-            </div>
 
-            <!-- Timeline Item: kita kiel -->
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <a href="#Kindergarten" class="timeline-content">
-                    <span class="timeline-year">2010-2014</span>
-                    <h2 class="timeline-title" 
-                        data-de="Die Kindergartenerfahrung" 
-                        data-en="My time in the kindergarten" 
-                        data-zh="美妙的幼儿园时光啊">[Wichtiger Moment]</h2>
-                </a>
-            </div>
+            <!-- 1. Multilingual greeting -->
+            <section class="home-greeting">
+                <p class="greeting-text"
+                   data-de="Hallo, willkommen auf meiner Website."
+                   data-en="Hello, welcome to my website."
+                   data-zh="你好，欢迎来到我的网站。">Hallo, willkommen auf meiner Website.</p>
+            </section>
 
-            <!-- Timeline Item: Platzhalter -->
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <a href="#placeholder" class="timeline-content">
-                    <span class="timeline-year">2014-2016</span>
-                    <h2 class="timeline-title" 
-                        data-de="[Wichtiger Moment]" 
-                        data-en="[Important Moment]" 
-                        data-zh="[重要时刻]">[Wichtiger Moment]</h2>
-                    <p class="timeline-description" 
-                       data-de="[Beschreibung]" 
-                       data-en="[Description]" 
-                       data-zh="[描述]">[Beschreibung]</p>
-                </a>
-            </div>
+            <!-- 2. Currently -->
+            <section class="home-section" id="currently">
+                <h2 class="home-section-title"
+                    data-de="Aktuelles"
+                    data-en="Currently"
+                    data-zh="目前">Aktuelles</h2>
+                <ul class="currently-list">
+                    <li class="currently-item">
+                        <span class="currently-label"
+                              data-de="Aktuelle Beschäftigung"
+                              data-en="Current occupation"
+                              data-zh="目前的主业">→ Aktuelle Beschäftigung</span>
+                        <span class="currently-value"
+                              data-de="[Platzhalter]"
+                              data-en="[Platzhalter]"
+                              data-zh="[占位符]"></span>
+                    </li>
+                    <li class="currently-item">
+                        <span class="currently-label"
+                              data-de="Momentanes Lieblingsprojekt"
+                              data-en="Current favourite project"
+                              data-zh="最近的目的">→ Momentanes Lieblingsprojekt</span>
+                        <span class="currently-value"
+                              data-de="[Platzhalter]"
+                              data-en="[Platzhalter]"
+                              data-zh="[占位符]"></span>
+                    </li>
+                    <li class="currently-item">
+                        <span class="currently-label"
+                              data-de="Beschäftigt mich gerade"
+                              data-en="Currently on my mind"
+                              data-zh="最近在思考">→ Beschäftigt mich gerade</span>
+                        <span class="currently-value"
+                              data-de="[Platzhalter]"
+                              data-en="[Platzhalter]"
+                              data-zh="[占位符]"></span>
+                    </li>
+                    <li class="currently-item">
+                        <span class="currently-label"
+                              data-de="Gerade am Lernen"
+                              data-en="Currently learning"
+                              data-zh="正在学">→ Gerade am Lernen</span>
+                        <span class="currently-value"
+                              data-de="[Platzhalter]"
+                              data-en="[Platzhalter]"
+                              data-zh="[占位符]"></span>
+                    </li>
+                    <li class="currently-item">
+                        <span class="currently-label"
+                              data-de="Am Lesen / Am Schauen"
+                              data-en="Reading / watching"
+                              data-zh="在看 / 在读">→ Am Lesen / Am Schauen</span>
+                        <span class="currently-value"
+                              data-de="[Platzhalter]"
+                              data-en="[Platzhalter]"
+                              data-zh="[占位符]"></span>
+                    </li>
+                </ul>
+            </section>
 
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <a href="#placeholder" class="timeline-content">
-                    <span class="timeline-year">2014-2016</span>
-                    <h2 class="timeline-title" 
-                        data-de="[Wichtiger Moment]" 
-                        data-en="[Important Moment]" 
-                        data-zh="[重要时刻]">[Wichtiger Moment]</h2>
-                    <p class="timeline-description" 
-                       data-de="[Beschreibung]" 
-                       data-en="[Description]" 
-                       data-zh="[描述]">[Beschreibung]</p>
-                </a>
-            </div>
+            <!-- 3. Mini-CV / fast facts -->
+            <section class="home-section home-section--minor" id="minicv">
+                <h2 class="home-section-title home-section-title--minor"
+                    data-de="Lebenslauf auf einen Blick"
+                    data-en="CV at a glance"
+                    data-zh="简历简介">Übersicht</h2>
+                <dl class="minicv-list">
+                    <div class="minicv-row">
+                        <dt data-de="Schule" data-en="School" data-zh="学校">Schule</dt>
+                        <dd data-de="Königin-Katharina-Stift-Gymnasium, Stuttgart (Hochbegabtenzug)"
+                            data-en="Königin-Katharina-Stift Gymnasium, Stuttgart (gifted programme)"
+                            data-zh="斯图加特Königin-Katharina-Stift中学，高智商班">Önigin-Katharina-Stift-Gymnasium, Stuttgart (Hochbegabtenzug)</dd>
+                    </div>
+                    <div class="minicv-row">
+                        <dt data-de="Abschluss (voraussichtlich)" data-en="Expected graduation" data-zh="预计毕业">Abschluss (voraussichtlich)</dt>
+                        <dd data-de="Abitur 07/2026 &middot; Notenschnitt 1,0"
+                            data-en="Abitur 07/2026 &middot; GPA equivalent 1.0"
+                            data-zh="Abitur 2026年7月 &middot; 均分1.0">Abitur 07/2026 &middot; Notenschnitt 1,0</dd>
+                    </div>
+                    <div class="minicv-row">
+                        <dt data-de="Leistungskurse" data-en="Advanced courses" data-zh="主修科目">Leistungskurse</dt>
+                        <dd data-de="Mathematik, Wirtschaft, Physik"
+                            data-en="Mathematics, Economics, Physics"
+                            data-zh="数学、经济、物理">Mathematik, Wirtschaft, Physik</dd>
+                    </div>
+                    <div class="minicv-row">
+                        <dt data-de="Stipendien" data-en="Scholarships" data-zh="奖学金">Stipendien</dt>
+                        <dd data-de="<a href='timeline.html#HLRS'>HLRS</a> (2024–25) &middot; <a href='timeline.html#ETA'>Entrepreneurship Talent Academy</a> (2025) &middot; <a href='timeline.html#YEEP'>YEEP</a> (2025–26)"
+                            data-en="<a href='timeline.html#HLRS'>HLRS</a> (2024–25) &middot; <a href='timeline.html#ETA'>Entrepreneurship Talent Academy</a> (2025) &middot; <a href='timeline.html#YEEP'>YEEP</a> (2025–26)"
+                            data-zh="<a href='timeline.html#HLRS'>HLRS</a> (2024–25) &middot; <a href='timeline.html#ETA'>创业才能学院</a> (2025) &middot; <a href='timeline.html#YEEP'>YEEP</a> (2025–26)"><a href="timeline.html#HLRS">HLRS</a> (2024–25) &middot; <a href="timeline.html#ETA">Entrepreneurship Talent Academy</a> (2025) &middot; <a href="timeline.html#YEEP">YEEP</a> (2025–26)</dd>
+                    </div>
+                    <div class="minicv-row">
+                        <dt data-de="Ehrenamt" data-en="Volunteering" data-zh="志愿服务">Ehrenamt</dt>
+                        <dd data-de="Nachhilfelehrer bei Hui-Education e.V. (seit 12/2023) &middot; Leitung HTML-AG (08/2023–07/2024)"
+                            data-en="Tutor at Hui-Education e.V. (since 12/2023) &middot; HTML course leader (08/2023–07/2024)"
+                            data-zh="Hui-Education e.V. 辅导老师（2023年12月至今）&middot; HTML兴趣班组长（2023年8月–2024年7月）">Nachhilfelehrer bei Hui-Education e.V. (seit 12/2023) &middot; Leitung HTML-AG (08/2023–07/2024)</dd>
+                    </div>
+                    <div class="minicv-row">
+                        <dt data-de="Sprachen" data-en="Languages" data-zh="语言">Sprachen</dt>
+                        <dd>
+                            <button class="lang-chip" data-lang-key="de" data-de="Deutsch" data-en="German" data-zh="德语">Deutsch</button><span class="lang-dot" aria-hidden="true">&nbsp;&middot; </span><button class="lang-chip" data-lang-key="en" data-de="Englisch" data-en="English" data-zh="英语">Englisch</button><span class="lang-dot" aria-hidden="true">&nbsp;&middot; </span><button class="lang-chip" data-lang-key="zh" data-de="Chinesisch" data-en="Chinese" data-zh="中文">Chinesisch</button>
+                        </dd>
+                    </div>
 
-            <!-- Timeline Item: 2023 -->
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <a href="#education-2023" class="timeline-content">
-                    <span class="timeline-year">2023</span>
-                    <h2 class="timeline-title" 
-                        data-de="Bildungs-Engagement" 
-                        data-en="Educational Commitment" 
-                        data-zh="教育投入">Bildungs-Engagement</h2>
-                    <p class="timeline-description" 
-                       data-de="Start der Nachhilfe-Tätigkeit und HTML-AG Leitung" 
-                       data-en="Start of tutoring activities and HTML-AG leadership" 
-                       data-zh="开始辅导活动和HTML工作组领导">Start der Nachhilfe-Tätigkeit und HTML-AG Leitung</p>
-                </a>
-            </div>
+                    <!-- Language popup (shared, reused per language) -->
+                    <div id="lang-popup" class="lang-popup" hidden role="dialog" aria-modal="true" aria-labelledby="lang-popup-title">
+                        <button class="lang-popup-close" aria-label="Schließen">&times;</button>
+                        <h3 id="lang-popup-title" class="lang-popup-lang"></h3>
+                        <p class="lang-popup-text"></p>
+                    </div>
+                    <div id="lang-overlay" class="lang-overlay" hidden></div>
+                </dl>
+            </section>
 
-            <!-- Timeline Item: 2024 -->
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <a href="#internships-2024" class="timeline-content">
-                    <span class="timeline-year">2024</span>
-                    <h2 class="timeline-title" 
-                        data-de="Praktika & Frühstudium" 
-                        data-en="Internships & Early Studies" 
-                        data-zh="实习和早期学习">Praktika & Frühstudium</h2>
-                    <p class="timeline-description" 
-                       data-de="Accenture, Hallesche und Beginn des Frühstudiums Informatik" 
-                       data-en="Accenture, Hallesche and start of early computer science studies" 
-                       data-zh="埃森哲、Hallesche和开始计算机科学早期学习">Accenture, Hallesche und Beginn des Frühstudiums Informatik</p>
-                </a>
-            </div>
-
-            <!-- Timeline Item: 2025 -->
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <a href="#scholarships-2025" class="timeline-content">
-                    <span class="timeline-year">2025</span>
-                    <h2 class="timeline-title" 
-                        data-de="Stipendien & FTC" 
-                        data-en="Scholarships & FTC" 
-                        data-zh="奖学金与FTC">Stipendien & FTC</h2>
-                    <p class="timeline-description" 
-                       data-de="ETA, YEEP Stipendien und Start bei FIRST Tech Challenge" 
-                       data-en="ETA, YEEP Scholarships and start at FIRST Tech Challenge" 
-                       data-zh="ETA、YEEP奖学金和开始参加FIRST科技挑战赛">ETA, YEEP Stipendien und Start bei FIRST Tech Challenge</p>
-                </a>
-            </div>
-
-            <!-- Timeline Item: 2026 - Gegenwart -->
-            <div class="timeline-item current">
-                <div class="timeline-marker"></div>
-                <a href="#hlrs-2026" class="timeline-content">
-                    <span class="timeline-year">2026</span>
-                    <h2 class="timeline-title" 
-                        data-de="Förderstipendium HLRS" 
-                        data-en="HLRS Scholarship" 
-                        data-zh="HLRS奖学金">Förderstipendium HLRS</h2>
-                    <p class="timeline-description" 
-                       data-de="Entwicklung KI-gestützter Systeme am Höchstleistungsrechenzentrum Stuttgart" 
-                       data-en="Development of AI-powered systems at High Performance Computing Center Stuttgart" 
-                       data-zh="在斯图加特高性能计算中心开发人工智能系统">Entwicklung KI-gestützter Systeme am Höchstleistungsrechenzentrum Stuttgart</p>
-                </a>
-            </div>
+            <!-- 4. Skills with references -->
+            <section class="home-section home-section--minor" id="skills">
+                <h2 class="home-section-title home-section-title--minor"
+                    data-de="Fähigkeiten"
+                    data-en="Skills"
+                    data-zh="技能">Fähigkeiten</h2>
+                <ul class="skills-list">
+                    <!-- Each skill links to the timeline entry where it was obtained. -->
+                    <li class="skill-item">
+                        <span class="skill-name">Java</span>
+                        <span class="skill-ref"><a href="timeline.html#FTC" data-de="&rarr; FIRST Tech Challenge" data-en="&rarr; FIRST Tech Challenge" data-zh="&rarr; FIRST Tech Challenge">&rarr; FIRST Tech Challenge</a></span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Docker</span>
+                        <span class="skill-ref"><a href="timeline.html#HLRS" data-de="&rarr; HLRS-Stipendium" data-en="&rarr; HLRS Scholarship" data-zh="&rarr; HLRS奖学金">&rarr; HLRS-Stipendium</a></span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">CI/CD</span>
+                        <span class="skill-ref"><a href="timeline.html#HLRS" data-de="&rarr; HLRS-Stipendium" data-en="&rarr; HLRS Scholarship" data-zh="&rarr; HLRS奖学金">&rarr; HLRS-Stipendium</a></span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Prompt Engineering</span>
+                        <span class="skill-ref"><a href="timeline.html#HLRS" data-de="&rarr; HLRS-Stipendium" data-en="&rarr; HLRS Scholarship" data-zh="&rarr; HLRS奖学金">&rarr; HLRS-Stipendium</a></span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">HTML &amp; CSS</span>
+                        <span class="skill-ref"><a href="timeline.html#HTML" data-de="&rarr; HTML-AG" data-en="&rarr; HTML course" data-zh="&rarr; HTML兴趣班">&rarr; HTML-AG</a></span>
+                    </li>
+                    <!-- [Platzhalter] Soft skills: to be elaborated in a later session (leadership, teaching, entrepreneurship, pitching etc.) -->
+                    <!-- [Platzhalter] Add more technical skills + references -->
+                </ul>
+            </section>
 
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Yiding</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Yiding Ma</p>
+            <div class="footer-contact">
+                <a href="https://github.com/Yidingdong" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <span class="footer-sep">&middot;</span>
+                <a href="mailto:mayiding@gmx.de" class="footer-link">mayiding@gmx.de</a>
+            </div>
+        </div>
     </footer>
 
-    <!-- Detail Views (Hidden by default, shown via hash navigation) -->
-    
-    <!-- Detail: Birth -->
-    <article id="birth" class="detail-view">
-        <div class="detail-container">
-            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
-            <h1 class="detail-title" data-de="Geburt" data-en="Birth" data-zh="出生"></h1>
-            <div class="detail-content">
-                <h3 data-de="Details zur Geburt" data-en="Birth Details" data-zh="出生详情">Details zur Geburt</h3>
-                <p data-de="Hier kannst du mehr Informationen über deine frühen Jahre hinzufügen." 
-                   data-en="Here you can add more information about your early years." 
-                   data-zh="在这里你可以添加更多关于你早年的信息。">Hier kannst du mehr Informationen über deine frühen Jahre hinzufügen.</p>
-                <ul>
-                    <li data-de="[Wichtiges Ereignis 1]" data-en="[Important Event 1]" data-zh="[重要事件1]">[Wichtiges Ereignis 1]</li>
-                    <li data-de="[Wichtiges Ereignis 2]" data-en="[Important Event 2]" data-zh="[重要事件2]">[Wichtiges Ereignis 2]</li>
-                </ul>
-            </div>
-        </div>
-    </article>
-
-    <article id="Kindergarten" class="detail-view">
-        <div class="detail-container">
-            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回"></a>
-            <h1 class="detail-title" data-de="Die Kindergartenerfahrung" data-en="Kindergarten" data-zh="幼儿园"></h1>
-            <div class="detail-content">
-                <h3 data-de="Details zur Kindergartenzeit" data-en="Details about my kindergarten time" data-zh="幼儿园详情"></h3>
-                <p data-de="Hier kannst du mehr Informationen über deine frühen Jahre hinzufügen." 
-                   data-en="Here you can add more information about your early years." 
-                   data-zh="在这里你可以添加更多关于你早年的信息。">Hier kannst du mehr Informationen über deine frühen Jahre hinzufügen.</p>
-                <ul>
-                    <li data-de="[Wichtiges Ereignis 1]" data-en="[Important Event 1]" data-zh="[重要事件1]">[Wichtiges Ereignis 1]</li>
-                    <li data-de="[Wichtiges Ereignis 2]" data-en="[Important Event 2]" data-zh="[重要事件2]">[Wichtiges Ereignis 2]</li>
-                </ul>
-            </div>
-        </div>
-    </article>
-
-    <!-- Detail: Placeholder -->
-    <article id="placeholder" class="detail-view">
-        <div class="detail-container">
-            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回">✕ Zurück</a>
-            <h1 class="detail-title" data-de="[Wichtiger Moment]" data-en="[Important Moment]" data-zh="[重要时刻]">[Wichtiger Moment]</h1>
-            <div class="detail-content">
-                <h3 data-de="Weitere Details" data-en="More Details" data-zh="更多详情">Weitere Details</h3>
-                <p data-de="Füge hier erweiterte Informationen hinzu." 
-                   data-en="Add extended information here." 
-                   data-zh="在这里添加扩展信息。">Füge hier erweiterte Informationen hinzu.</p>
-            </div>
-        </div>
-    </article>
-
-    <!-- Detail: Education 2023 -->
-    <article id="education-2023" class="detail-view">
-        <div class="detail-container">
-            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回">✕ Zurück</a>
-            <h1 class="detail-title" data-de="Bildungs-Engagement" data-en="Educational Commitment" data-zh="教育投入">Bildungs-Engagement</h1>
-            <div class="detail-content">
-                <h3 data-de="Bildungs-Engagement im Detail" data-en="Educational Commitment in Detail" data-zh="教育投入详情">Bildungs-Engagement im Detail</h3>
-                <h4 data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</h4>
-                <p data-de="Individueller Unterricht in Mathematik, Informatik, Englisch und Physik." 
-                   data-en="Individual lessons in mathematics, computer science, English and physics." 
-                   data-zh="数学、计算机科学、英语和物理的个人课程。">Individueller Unterricht in Mathematik, Informatik, Englisch und Physik.</p>
-                <h4 data-de="HTML-AG Leitung" data-en="HTML-AG Leadership" data-zh="HTML工作组领导">HTML-AG Leitung</h4>
-                <p data-de="Leitung einer Arbeitsgemeinschaft für Schüler ab der 5. Klasse. Ziel: Jeder erstellt eine eigene AboutMe-Seite." 
-                   data-en="Leading a workshop for students from 5th grade. Goal: Everyone creates their own AboutMe page." 
-                   data-zh="为五年级及以上学生领导工作坊。目标：每个人创建自己的AboutMe页面。">Leitung einer Arbeitsgemeinschaft für Schüler ab der 5. Klasse. Ziel: Jeder erstellt eine eigene AboutMe-Seite.</p>
-            </div>
-        </div>
-    </article>
-
-    <!-- Detail: Internships 2024 -->
-    <article id="internships-2024" class="detail-view">
-        <div class="detail-container">
-            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回">✕ Zurück</a>
-            <h1 class="detail-title" data-de="Praktika & Frühstudium" data-en="Internships & Early Studies" data-zh="实习和早期学习">Praktika & Frühstudium</h1>
-            <div class="detail-content">
-                <h3 data-de="Praktika & Frühstudium Details" data-en="Internships & Early Studies Details" data-zh="实习和早期学习详情">Praktika & Frühstudium Details</h3>
-                <h4 data-de="Accenture Praktikum" data-en="Accenture Internship" data-zh="埃森哲实习">Accenture Praktikum</h4>
-                <p data-de="Praktische Erfahrung in agilen Entwicklungsmethoden und Kanban-Projektmanagement." 
-                   data-en="Practical experience in agile development methods and Kanban project management." 
-                   data-zh="敏捷开发方法和看板项目管理的实践经验。">Praktische Erfahrung in agilen Entwicklungsmethoden und Kanban-Projektmanagement.</p>
-                <h4 data-de="Hallesche Praktikum" data-en="Hallesche Internship" data-zh="Hallesche实习">Hallesche Praktikum</h4>
-                <p data-de="IT-Rotation durch verschiedene Abteilungen: Systemadministration, Netzwerktechnik, Support." 
-                   data-en="IT rotation through various departments: system administration, network technology, support." 
-                   data-zh="IT轮岗：系统管理、网络技术、支持。">IT-Rotation durch verschiedene Abteilungen: Systemadministration, Netzwerktechnik, Support.</p>
-                <h4 data-de="Frühstudium Informatik" data-en="Early Computer Science Studies" data-zh="计算机科学早期学习">Frühstudium Informatik</h4>
-                <p data-de="Universität Stuttgart - Fokus auf Software-Engineering und Algorithmen." 
-                   data-en="University of Stuttgart - Focus on Software Engineering and Algorithms." 
-                   data-zh="斯图加特大学 - 专注于软件工程和算法。">Universität Stuttgart - Fokus auf Software-Engineering und Algorithmen.</p>
-            </div>
-        </div>
-    </article>
-
-    <!-- Detail: Scholarships 2025 -->
-    <article id="scholarships-2025" class="detail-view">
-        <div class="detail-container">
-            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回">✕ Zurück</a>
-            <h1 class="detail-title" data-de="Stipendien & FTC" data-en="Scholarships & FTC" data-zh="奖学金与FTC">Stipendien & FTC</h1>
-            <div class="detail-content">
-                <h3 data-de="Stipendien & FTC Details" data-en="Scholarships & FTC Details" data-zh="奖学金与FTC详情">Stipendien & FTC Details</h3>
-                <h4 data-de="ETA - Stiftung der Deutschen Wirtschaft" data-en="ETA - Foundation of German Business" data-zh="ETA - 德国经济基金会">ETA - Stiftung der Deutschen Wirtschaft</h4>
-                <p data-de="Stipendiat im Entrepreneurship-Programm. Entwicklung einer VR-Geschäftsidee." 
-                   data-en="Scholar in the entrepreneurship program. Development of a VR business idea." 
-                   data-zh="创业计划奖学金获得者。开发VR商业创意。">Stipendiat im Entrepreneurship-Programm. Entwicklung einer VR-Geschäftsidee.</p>
-                <h4 data-de="YEEP - NXTGN" data-en="YEEP - NXTGN" data-zh="YEEP - NXTGN">YEEP - NXTGN</h4>
-                <p data-de="Young Entrepreneurship Education Program - Erfolgreiche Teilnahme an der Cellios-Challenge." 
-                   data-en="Young Entrepreneurship Education Program - Successful participation in the Cellios Challenge." 
-                   data-zh="年轻创业教育计划 - 成功参加Cellios挑战赛。">Young Entrepreneurship Education Program - Erfolgreiche Teilnahme an der Cellios-Challenge.</p>
-                <h4 data-de="FIRST Tech Challenge (FTC)" data-en="FIRST Tech Challenge (FTC)" data-zh="FIRST科技挑战赛(FTC)">FIRST Tech Challenge (FTC)</h4>
-                <p data-de="Start im September 2025. Teilnahme am internationalen Robotik-Wettbewerb." 
-                   data-en="Started in September 2025. Participation in the international robotics competition." 
-                   data-zh="2025年9月开始。参加国际机器人竞赛。">Start im September 2025. Teilnahme am internationalen Robotik-Wettbewerb.</p>
-            </div>
-        </div>
-    </article>
-
-    <!-- Detail: HLRS 2026 -->
-    <article id="hlrs-2026" class="detail-view">
-        <div class="detail-container">
-            <a href="#" class="back-btn" data-de="✕ Zurück" data-en="✕ Back" data-zh="✕ 返回">✕ Zurück</a>
-            <h1 class="detail-title" data-de="Förderstipendium HLRS" data-en="HLRS Scholarship" data-zh="HLRS奖学金">Förderstipendium HLRS</h1>
-            <div class="detail-content">
-                <h3 data-de="Förderstipendium HLRS - Details" data-en="HLRS Scholarship - Details" data-zh="HLRS奖学金 - 详情">Förderstipendium HLRS - Details</h3>
-                <p data-de="Entwicklung einer automatisierten Klausur-Pipeline mit KI-Integration und Docker-Containerisierung am Höchstleistungsrechenzentrum Stuttgart." 
-                   data-en="Development of an automated exam pipeline with AI integration and Docker containerization at the High Performance Computing Center Stuttgart." 
-                   data-zh="在斯图加特高性能计算中心开发带有AI集成和Docker容器化的自动化考试管道。">Entwicklung einer automatisierten Klausur-Pipeline mit KI-Integration und Docker-Containerisierung am Höchstleistungsrechenzentrum Stuttgart.</p>
-                <h4 data-de="Technologien" data-en="Technologies" data-zh="技术">Technologien</h4>
-                <ul>
-                    <li>Docker</li>
-                    <li data-de="KI/Machine Learning" data-en="AI/Machine Learning" data-zh="人工智能/机器学习">KI/Machine Learning</li>
-                    <li data-de="Automatisierung" data-en="Automation" data-zh="自动化">Automatisierung</li>
-                </ul>
-            </div>
-        </div>
-    </article>
-
     <script src="script.js"></script>
+    <script>
+        (function() {
+            var langData = {
+                de: { de: 'Deutsch',     en: 'German',   zh: '德语',   textDe: '[Platzhalter]', textEn: '[Placeholder]', textZh: '[占位符]' },
+                en: { de: 'Englisch',   en: 'English',  zh: '英语',   textDe: '[Platzhalter]', textEn: '[Placeholder]', textZh: '[占位符]' },
+                zh: { de: 'Chinesisch', en: 'Chinese',  zh: '中文',   textDe: '[Platzhalter]', textEn: '[Placeholder]', textZh: '[占位符]' }
+            };
+            var popup  = document.getElementById('lang-popup');
+            var overlay = document.getElementById('lang-overlay');
+            var titleEl = document.getElementById('lang-popup-title');
+            var textEl  = popup.querySelector('.lang-popup-text');
+            var closeBtn = popup.querySelector('.lang-popup-close');
+
+            function currentLang() {
+                return localStorage.getItem('lang') || 'de';
+            }
+
+            function openPopup(key) {
+                var d = langData[key];
+                var ui = currentLang();
+                titleEl.textContent = d[ui];
+                textEl.textContent  = d['text' + ui.charAt(0).toUpperCase() + ui.slice(1)];
+                popup.hidden  = false;
+                overlay.hidden = false;
+                closeBtn.focus();
+            }
+
+            function closePopup() {
+                popup.hidden  = true;
+                overlay.hidden = true;
+            }
+
+            document.querySelectorAll('.lang-chip').forEach(function(chip) {
+                chip.addEventListener('click', function() { openPopup(chip.dataset.langKey); });
+            });
+            closeBtn.addEventListener('click', closePopup);
+            overlay.addEventListener('click', closePopup);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closePopup();
+            });
+        })();
+    </script>
 </body>
 </html>
