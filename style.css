@@ -13,7 +13,7 @@
     --bg-color: #f2f2f0;
     --surface-color: #e8e8e5;
     --text-primary: #1a1a1a;
-    --text-secondary: #666666;
+    --text-secondary: #505050;
     --border-color: #d6d6d2;
     --accent-color: #333333;
     --marker-color: #1a1a1a;
@@ -423,7 +423,7 @@ html.dark-mode .detail-container {
 
     .navbar {
         flex-wrap: wrap;
-        gap: 0.4rem;
+        gap: 0.25rem;
     }
 
     .name {
@@ -474,8 +474,7 @@ html.dark-mode .detail-container {
     }
 
     .filter-bar {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
     }
 
     .group-period {
@@ -502,6 +501,27 @@ html.dark-mode .detail-container {
     .ideas-board {
         grid-template-columns: 1fr;
         gap: 1.25rem;
+    }
+
+    /* --- Touch targets (min 44px) --- */
+    .nav-link {
+        padding: 0.75rem 0.85rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .lang-btn,
+    .theme-toggle {
+        min-height: 44px;
+        padding: 0.6rem 0.9rem;
+    }
+
+    .filter-tag {
+        padding: 0.5rem 0.75rem;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
     }
 }
 
@@ -545,12 +565,32 @@ html.dark-mode .detail-container {
     }
 
     .filter-bar {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
     }
 
     .group-period {
         display: none;
+    }
+
+    /* --- Touch targets (min 44px) --- */
+    .nav-link {
+        padding: 0.65rem 0.85rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .lang-btn,
+    .theme-toggle {
+        min-height: 44px;
+        padding: 0.55rem 0.9rem;
+    }
+
+    .filter-tag {
+        padding: 0.45rem 0.75rem;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
     }
 }
 
@@ -1096,7 +1136,7 @@ html.dark-mode .sticky-content {
 }
 
 .home-section--minor {
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .home-section-title {
@@ -1111,7 +1151,7 @@ html.dark-mode .sticky-content {
 .home-section-title--minor {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 /* Currently section */
@@ -1131,7 +1171,8 @@ html.dark-mode .sticky-content {
 .currently-label {
     flex-shrink: 0;
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
     min-width: 200px;
 }
 
@@ -1157,11 +1198,11 @@ html.dark-mode .sticky-content {
     flex-shrink: 0;
     width: 210px;
     font-weight: 600;
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 .minicv-row dd {
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 .minicv-row dd a {
