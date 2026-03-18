@@ -71,6 +71,35 @@ if (window.location.hash) {
     setLanguage(lang);
 }
 
+// ── MOBILE NAV TOGGLE ──────────────────────────────────────────────────────
+const navToggle = document.querySelector('.nav-toggle');
+const mobileNavbar = document.querySelector('.navbar');
+
+if (navToggle && mobileNavbar) {
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileNavbar.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    mobileNavbar.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNavbar.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.textContent = '☰';
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.header')) {
+            mobileNavbar.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.textContent = '☰';
+        }
+    });
+}
+
 console.log('Timeline Website loaded successfully!');
 console.log(`Current theme: ${currentTheme}`);
 console.log(`Current language: ${currentLanguage}`);
