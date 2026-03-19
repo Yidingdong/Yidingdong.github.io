@@ -720,11 +720,15 @@ html.dark-mode .detail-container {
    NAVBAR
    ==================================== */
 
-.navbar {
-    display: block;
-    padding-top: 0.75rem;
-    margin-top: 0.75rem;
-    border-top: 1px solid var(--border-color);
+/* Base (desktop) navbar layout — must be inside min-width so it
+   does NOT override the grid-collapse rules in the ≤480px block */
+@media (min-width: 481px) {
+    .navbar {
+        display: block;
+        padding-top: 0.75rem;
+        margin-top: 0.75rem;
+        border-top: 1px solid var(--border-color);
+    }
 }
 
 .navbar-inner {
@@ -1257,6 +1261,13 @@ html.dark-mode .sticky-content {
 .currently-value {
     font-size: 0.95rem;
     color: var(--text-primary);
+}
+
+.currently-updated {
+    margin-top: 0.9rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-style: italic;
 }
 
 /* Mini-CV */
