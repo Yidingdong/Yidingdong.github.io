@@ -10,11 +10,11 @@
 
 :root {
     /* Light Mode Colors */
-    --bg-color: #f2f2f0;
-    --surface-color: #e8e8e5;
+    --bg-color: #f5f0e8;
+    --surface-color: #ece5d8;
     --text-primary: #1a1a1a;
     --text-secondary: #505050;
-    --border-color: #d6d6d2;
+    --border-color: #d4ccbf;
     --accent-color: #333333;
     --marker-color: #1a1a1a;
 
