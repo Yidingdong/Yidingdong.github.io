@@ -1,22 +1,21 @@
 ﻿# To-Do & Placeholders
 
-Last updated: 2026-03-19
+Last updated: 2026-03-19 (session 2)
 
 ---
 
 ## index.html — Content needed
 
-### Aktuelles section (5 rows, all [Platzhalter])
+### Aktuelles section ✔ DONE
 
-Provide exact wording (German at minimum; English/Chinese can follow):
+All 5 rows filled as of 2026-03-19:
+- Aktuelle Beschäftigung: Schüler am Königin-Katharina-Stift-Gymnasium Stuttgart
+- Momentanes Lieblingsprojekt: Diese About-Me-Website weiterentwickeln
+- Beschäftigt mich gerade: Zukunftspläne
+- Gerade am Lernen: Besser mit Zeit umgehen – mehr Disziplin
+- Am Lesen / Am Schauen: «Who am I?» (Film) · Måneskin
 
-| Row label (DE) | What it means | Your answer |
-|----------------|---------------|-------------|
-| Aktuelle Beschäftigung | Your main current activity (school? FTC? YEEP?) | ? |
-| Momentanes Lieblingsprojekt | The project you're most excited about right now | ? |
-| Beschäftigt mich gerade | What's occupying your mind / keeping you busy | ? |
-| Gerade am Lernen | Something you're actively learning right now | ? |
-| Am Lesen / Am Schauen | A book and/or show/film | ? |
+Update when content changes.
 
 ### Language popup texts (3 languages × 3 translations each)
 
@@ -95,11 +94,11 @@ Add to the Kindheit group in timeline.html:
 
 ---
 
-## SEO — Manual steps (Yiding does these in browser)
+## SEO — Manual steps
 
-- [ ] **Google Search Console:** go to search.google.com/search-console → add itsyid.com → verify via DNS TXT record → submit `https://itsyid.com/sitemap.xml`
-- [ ] **Bing Webmaster Tools:** bing.com/webmasters → import from Google Search Console (one click)
-- [ ] **GitHub bio:** add `itsyid.com` to github.com/Yidingdong profile for a backlink
+- [x] Google Search Console: verified itsyid.com, sitemap submitted (done 2026-03)
+- [x] GitHub bio: itsyid.com added (done 2026-03)
+- [ ] Bing Webmaster Tools: import from GSC (still pending)
 
 ---
 

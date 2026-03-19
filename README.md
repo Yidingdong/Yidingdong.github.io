@@ -61,7 +61,7 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 
 ### index.html
 - Greeting: DE "Hallo, willkommen auf meiner Website."
-- Section 2: Aktuelles — 5 rows (all [Platzhalter])
+- Section 2: Aktuelles — 5 rows (filled). Rows: Aktuelle Beschäftigung, Momentanes Lieblingsprojekt, Beschäftigt mich gerade, Gerade am Lernen, Am Lesen / Am Schauen. `<p class="currently-updated">` below the list shows "Stand: März 2026" (multilingual).
 - Section 3: Lebenslauf auf einen Blick — School, Graduation, Leistungskurse, Stipendien (linked to #HLRS #ETA #YEEP), Ehrenamt, Languages
   - Languages row: each chip opens a modal popup (all 3 texts still placeholder)
 - Section 4: Fähigkeiten — Java, Docker, CI/CD, Prompt Engineering, HTML & CSS (each arrow-linked to timeline entry)
@@ -98,7 +98,8 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 - `.home-section--minor` opacity is 1.0 (was 0.8)
 - `.minicv-row dt` and `dd` both use `--text-primary`
 - `.currently-label` uses `--text-primary` + `font-weight: 600`
-- `.navbar` base: `display: block`; `.navbar-inner` inside: `display: flex` with links
+- `.navbar` base: wrapped in `@media (min-width: 481px) { display: block }` — prevents cascade override of mobile grid-collapse
+- `.navbar-inner` inside: `display: flex` with links
 - Mobile navbar: `grid-template-rows: 0fr → 1fr` transition (pixel-perfect, unlike max-height)
 
 ---
@@ -138,6 +139,9 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 | 2026-03 | Timeline: anti-chronological (JS-reversed), empty-group placeholder, scroll-to-first |
 | 2026-03 | Text contrast: --text-secondary #505050, section opacity 1.0, CV labels/values primary |
 | 2026-03 | Mobile nav: slim 1-row header, hamburger, grid-template-rows animation |
+| 2026-03 | Navbar base `.navbar` wrapped in `@media (min-width: 481px)` — was overriding mobile collapse |
+| 2026-03 | Aktuelles: all 5 rows filled; `currently-updated` paragraph added ("Stand: März 2026") |
+| 2026-03 | SEO: `<h1>` gets static "Yiding Ma" text (JS overwrites on load, but ensures Googlebot sees it) |
 
 ---
 
@@ -146,7 +150,6 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 See TODO.md for detailed placeholder tracker.
 
 **Content (Yiding to provide):**
-- [ ] "Aktuelles" section — 5 items
 - [ ] Language popup stories — 3 languages x 3 translations
 - [ ] 15 timeline detail views
 - [ ] Missing Hector-Chess timeline entry (Kindheit)
@@ -155,8 +158,5 @@ See TODO.md for detailed placeholder tracker.
 - [ ] Soft skills
 
 **Technical / manual:**
-- [ ] Google Search Console: verify itsyid.com + submit sitemap
-- [ ] Bing Webmaster Tools: import from GSC
-- [ ] GitHub bio: add itsyid.com as backlink
 - [ ] Avatar / Strichmännchen when ready
 - [ ] Publish Cellios / HTML-AG materials before linking from detail views
