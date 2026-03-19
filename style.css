@@ -460,24 +460,32 @@ html.dark-mode .detail-container {
         color: var(--text-primary);
     }
 
-    /* Collapsed navbar — only max-height animates; no border/margin movement */
+    /* Collapsed navbar — grid trick for pixel-perfect smooth animation */
     .navbar {
-        max-height: 0;
-        overflow: hidden;
-        margin-top: 0;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.28s ease;
         padding-top: 0;
+        margin-top: 0;
         border-top: none;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-        transition: max-height 0.25s ease;
     }
 
     .navbar.nav-open {
-        max-height: 200px;
+        grid-template-rows: 1fr;
+    }
+
+    .navbar-inner {
+        overflow: hidden;
+        min-height: 0;
+        padding-bottom: 0;
+        transition: padding-bottom 0.28s ease;
+    }
+
+    .navbar.nav-open .navbar-inner {
         padding-bottom: 0.4rem;
     }
 
-    /* Tighter highlight in dropdown — remove oversized touch min-height */
+    /* Tighter highlight in dropdown */
     .navbar .nav-link {
         padding: 0.5rem 0.85rem;
         min-height: unset;
@@ -713,11 +721,16 @@ html.dark-mode .detail-container {
    ==================================== */
 
 .navbar {
-    display: flex;
-    gap: 0.25rem;
+    display: block;
     padding-top: 0.75rem;
     margin-top: 0.75rem;
     border-top: 1px solid var(--border-color);
+}
+
+.navbar-inner {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
 }
 
 .nav-link {
