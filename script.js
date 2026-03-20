@@ -1,4 +1,11 @@
-﻿const themeToggle = document.querySelector('.theme-toggle');
+﻿// ============================================================
+// !! AI ASSISTANT — READ BEFORE EDITING !!
+// README.md  →  project reference, language system, feature docs
+// TODO.md    →  pending tasks, placeholder content tracker
+// Both files are in the workspace root: C:\_Applikationen\_AboutMe\
+// ============================================================
+
+const themeToggle = document.querySelector('.theme-toggle');
 const themeText = document.querySelector('.theme-text');
 const html = document.documentElement;
 

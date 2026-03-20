@@ -1,3 +1,10 @@
+/* ============================================================
+   !! AI ASSISTANT — READ BEFORE EDITING !!
+   README.md  →  project reference, section structure, CSS notes
+   TODO.md    →  pending tasks, placeholder content tracker
+   Both files are in the workspace root: C:\_Applikationen\_AboutMe\
+   ============================================================ */
+
 /* ====================================
    CSS RESET & VARIABLES
    ==================================== */
@@ -542,17 +549,74 @@ html.dark-mode .detail-container {
         display: none;
     }
 
-    .currently-item,
-    .minicv-row,
-    .skill-item {
-        flex-direction: column;
-        gap: 0.15rem;
+    .currently-list,
+    .minicv-list,
+    .skills-list {
+        gap: 0;
+    }
+
+    .currently-item {
+        display: block;
+        padding-top: 1.5rem;
+    }
+
+    .currently-item:first-child {
+        padding-top: 0;
     }
 
     .currently-label,
-    .minicv-row dt,
-    .skill-name {
+    .currently-value {
+        display: block;
+        line-height: 1.35;
+    }
+
+    .currently-label {
         min-width: unset;
+        margin-bottom: 0.05rem;
+    }
+
+    .minicv-row {
+        display: block;
+        padding-top: 1.25rem;
+    }
+
+    .minicv-row:first-child {
+        padding-top: 0;
+    }
+
+    .minicv-row dt {
+        display: block;
+        width: auto;
+        min-width: unset;
+        line-height: 1.35;
+        margin-bottom: 0.05rem;
+    }
+
+    .minicv-row dd {
+        display: block;
+        margin-left: 0;
+        line-height: 1.35;
+    }
+
+    .skill-item {
+        display: block;
+        padding-top: 1.25rem;
+    }
+
+    .skill-item:first-child {
+        padding-top: 0;
+    }
+
+    .skill-name {
+        display: block;
+        min-width: unset;
+        line-height: 1.35;
+        margin-bottom: 0.05rem;
+    }
+
+    .skill-ref {
+        display: block;
+        line-height: 1.35;
     }
 
     .greeting-text {
@@ -610,17 +674,74 @@ html.dark-mode .detail-container {
         flex-wrap: wrap;
     }
 
-    .currently-item,
-    .minicv-row,
-    .skill-item {
-        flex-direction: column;
-        gap: 0.15rem;
+    .currently-list,
+    .minicv-list,
+    .skills-list {
+        gap: 0;
+    }
+
+    .currently-item {
+        display: block;
+        padding-top: 1.5rem;
+    }
+
+    .currently-item:first-child {
+        padding-top: 0;
     }
 
     .currently-label,
-    .minicv-row dt,
-    .skill-name {
+    .currently-value {
+        display: block;
+        line-height: 1.35;
+    }
+
+    .currently-label {
         min-width: unset;
+        margin-bottom: 0.05rem;
+    }
+
+    .minicv-row {
+        display: block;
+        padding-top: 1.25rem;
+    }
+
+    .minicv-row:first-child {
+        padding-top: 0;
+    }
+
+    .minicv-row dt {
+        display: block;
+        width: auto;
+        min-width: unset;
+        line-height: 1.35;
+        margin-bottom: 0.05rem;
+    }
+
+    .minicv-row dd {
+        display: block;
+        margin-left: 0;
+        line-height: 1.35;
+    }
+
+    .skill-item {
+        display: block;
+        padding-top: 1.25rem;
+    }
+
+    .skill-item:first-child {
+        padding-top: 0;
+    }
+
+    .skill-name {
+        display: block;
+        min-width: unset;
+        line-height: 1.35;
+        margin-bottom: 0.05rem;
+    }
+
+    .skill-ref {
+        display: block;
+        line-height: 1.35;
     }
 
     .ideas-board {
@@ -1411,6 +1532,129 @@ html.dark-mode .sticky-content {
 .skill-ref a:hover {
     color: var(--text-primary);
     text-decoration: underline;
+}
+
+/* === Currently Active list === */
+.active-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.active-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.active-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.active-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* === Week Calendar (time grid) === */
+.week-cal-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1rem;
+}
+
+.wc-time-grid {
+    display: grid;
+    grid-template-columns: 3rem repeat(7, 1fr);
+    grid-template-rows: 2rem repeat(53, 8px);
+    min-width: 500px;
+}
+
+.wc-tg-day {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.25rem;
+}
+
+.wc-tg-hlabel {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    text-align: right;
+    padding-right: 0.35rem;
+    white-space: nowrap;
+    align-self: start;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wc-tg-hline {
+    border-top: 1px solid var(--border-color);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wc-tg-block {
+    border-radius: 3px;
+    font-size: 0.62rem;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+    overflow: hidden;
+    z-index: 2;
+    margin: 0 1px;
+}
+
+.wc-school { background-color: rgba(100, 150, 210, 0.28); }
+.wc-tutor  { background-color: rgba(220, 115,  55, 0.28); }
+
+.week-cal-note {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.week-cal-legend {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+}
+
+.wc-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.wc-legend-dot {
+    display: inline-block;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.wc-cell--dim {
+    opacity: 0.55;
 }
 
 
