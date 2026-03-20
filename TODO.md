@@ -1,34 +1,34 @@
 ﻿# To-Do & Placeholders
 
-Last updated: 2026-03-19 (session 2)
+Last updated: 2026-03-20 (session 4)
 
 ---
 
 ## index.html — Content needed
 
-### Aktuelles section ✔ DONE
+### Was mich gerade beschäftigt / What's currently on my mind ✔ DONE (session 4)
 
-All 5 rows filled as of 2026-03-19:
-- Aktuelle Beschäftigung: Schüler am Königin-Katharina-Stift-Gymnasium Stuttgart
-- Momentanes Lieblingsprojekt: Diese About-Me-Website weiterentwickeln
-- Beschäftigt mich gerade: Zukunftspläne
-- Gerade am Lernen: Besser mit Zeit umgehen – mehr Disziplin
-- Am Lesen / Am Schauen: «Who am I?» (Film) · Måneskin
+Section renamed from "Aktuelles". Reduced to 3 items (2 removed):
+- Beschäftigt mich gerade: "Wie ich leben will · was ich arbeiten will · was ich studieren will" ✔
+- Gerade am Lernen: "Besser mit Zeit umgehen – mehr Disziplin" ✔
+- Am Lesen / Am Schauen: «Who am I?» (Film) · Måneskin ✔
 
-Update when content changes.
+Update these whenever the content changes.
 
-### Language popup texts (3 languages × 3 translations each)
+### Aktuelle Beschäftigung & Projekte ✔ DONE (session 4)
 
-Each chip (Deutsch / Englisch / Chinesisch) opens a popup. Write a short paragraph:
+Section renamed from "Was ich gerade mache". All 5 entries filled — update if projects change.
 
-- **Deutsch:** How did you learn it? (Native? Family language in Germany?)
-- **Englisch:** How did you learn it? (School? Travel? Self-study?)
-- **Chinesisch:** How did you learn it? (Family heritage, Chinese roots, visits to China?)
+### Eine Woche in meinem Leben (hourly time grid) ✔ DONE (session 4)
 
-### Skills section
+Built from two Google Calendar weeks (March 10–23, 2026).
+- [ ] Verify grid still reflects a typical week as your schedule evolves
+- Biweekly Tuesday afternoon blocks (Englisch + Informatik) shown dimmed — update if that changes
 
-- [ ] Decide on soft skills to add: leadership (HTML-AG), teaching (Hui-Education), entrepreneurship (ETA/YEEP), pitching
-- [ ] Avatar / Strichmännchen when drawn
+### Meine Fähigkeiten / My Skills
+
+- [ ] Decide what to list — intentionally left empty for now
+- Possible: teaching, leadership, entrepreneurship, pitching; Java, Docker, CI/CD, Prompt Engineering, HTML/CSS
 
 ---
 
@@ -42,39 +42,39 @@ Add to the Kindheit group in timeline.html:
 - Short one-line description of the chess course
 - Detail view anchor: `#HectorChess`
 
-### Detail views (all [Platzhalter] — provide text for each)
+### Detail views — provide personal text for each
 
 #### Kindheit (2008–2014)
-| Anchor | Entry | What to write |
-|--------|-------|---------------|
-| `#birth` | Meine Geburt | Your birth story / context |
-| `#Kindergarten` | Die Kindergartenerfahrung | Memories from 3 kindergartens: Kiel → Issum → Böblingen |
-| `#HectorChess` | Hector-Chess *(entry missing)* | Your chess academy experience |
+| Anchor | Entry | Status |
+|--------|-------|--------|
+| `#birth` | Meine Geburt | `[Platzhalter]` |
+| `#Kindergarten` | Die Kindergartenerfahrung | `[Platzhalter]` |
+| `#HectorChess` | Hector-Chess *(entry also missing)* | Not yet created |
 
 #### Grundschule (2014–2018)
-| Anchor | Entry | What to write |
-|--------|-------|---------------|
-| `#Grundschule1` | Wilhelm-Hauff-Schule | Memories; you were student of the month |
-| `#Grundschule2` | Flattichschule | New school + teacher change from 3rd → 4th grade |
-| `#HectorKinderakademie` | Hector Enigma | Codes & secret writing experience |
+| Anchor | Entry | Status |
+|--------|-------|--------|
+| `#Grundschule1` | Wilhelm-Hauff-Schule | `[Platzhalter]` |
+| `#Grundschule2` | Flattichschule | `[Platzhalter]` |
+| `#HectorKinderakademie` | Hector Enigma | `[Platzhalter]` |
 
 #### Gymnasium (2018–2024)
-| Anchor | Entry | What to write |
-|--------|-------|---------------|
-| `#KKSt` | Hochbegabtenzug KKSt | What was it like across those 6 years? |
-| `#Nachhilfe` | Nachhilfelehrer Hui-Education | Why you joined; subjects you taught; moments |
-| `#HTML` | Leitung HTML-AG | How it started; curriculum you wrote; what students learned |
+| Anchor | Entry | Status |
+|--------|-------|--------|
+| `#KKSt` | Hochbegabtenzug KKSt | `[Platzhalter]` |
+| `#Nachhilfe` | Nachhilfelehrer Hui-Education | Stub added ✔ (session 4) — personal text still needed |
+| `#HTML` | Leitung HTML-AG | Filled ✔ |
 
 #### gymnasiale Oberstufe (2024–2026)
-| Anchor | Entry | What to write |
-|--------|-------|---------------|
-| `#KKSt2` | Oberstufe KKSt | Fix [Platzhalter] in main card + detail view |
-| `#ETA` | Entrepreneurship Talent Academy | Workshops; what you learned; highlights |
-| `#HLRS` | HLRS Stipendium | Docker/CI-CD/AI work done; project outcome |
-| `#Frühstudium` | Frühstudium Uni Stuttgart | How the module went; what you learned |
-| `#FTC` | FIRST Tech Challenge | Robot; competition results; your role in Java code |
-| `#YEEP` | YEEP + Cellios | YEEP program; 3D simulator details; current status |
-| `#KKSt3` | Abitur | Reflection (can stay placeholder until after July 2026) |
+| Anchor | Entry | Status |
+|--------|-------|--------|
+| `#KKSt2` | Oberstufe KKSt | Card preview filled ✔ (session 4) — detail view body still `[Platzhalter]` |
+| `#ETA` | Entrepreneurship Talent Academy | Stub added ✔ (session 4) — personal text still needed |
+| `#HLRS` | HLRS Stipendium | `[Platzhalter]` |
+| `#Frühstudium` | Frühstudium Uni Stuttgart | Intro filled; "Meine Erfahrung" still `[Platzhalter]` |
+| `#FTC` | FIRST Tech Challenge | "Decode Session" section still `[Platzhalter]` |
+| `#YEEP` | YEEP + Cellios | `[Platzhalter]` |
+| `#KKSt3` | Abitur | `[Platzhalter]` — fill after July 2026 |
 
 ---
 

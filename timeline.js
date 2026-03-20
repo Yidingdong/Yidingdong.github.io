@@ -1,4 +1,11 @@
 // ============================================================
+// !! AI ASSISTANT — READ BEFORE EDITING !!
+// README.md  →  project reference, timeline behaviour docs
+// TODO.md    →  all placeholder detail views and missing entries
+// Both files are in the workspace root: C:\_Applikationen\_AboutMe\
+// ============================================================
+
+// ============================================================
 // TIMELINE.JS – specific to timeline.html
 // Handles: accordion groups, topic-tag filtering, scroll animations
 // ============================================================

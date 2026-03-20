@@ -11,7 +11,8 @@
 - Alias: Itsyid
 - Languages: German (native-level), English, Chinese
 - Currently: 12th grade (gymnasiale Oberstufe), Abitur expected 07/2026
-- Leistungskurse: Mathematik, Wirtschaft, Physik. Current GPA: ~1.1 (target 1.0)
+- Leistungskurse: Mathematik, Wirtschaft, Physik
+- GPA: targeting 1.0 overall (half-year scores so far: 1.1, 0.9, 1.1; targeting 0.9 in current half-year → overall 1.0)
 - Live site: **itsyid.com** (GitHub Pages, served from `master` branch)
 - Dev branch: `main`
 
@@ -20,16 +21,28 @@
 ## Deployment Workflow
 
 Two-branch setup:
-- `main` — development branch (work here)
-- `master` — production / GitHub Pages (always sync from main after commits)
+- `main` — development branch (all work and commits go here)
+- `master` — production / GitHub Pages (live site at itsyid.com)
 
-Sync command pattern:
-```
-git add -A && git commit -m "..." && git push origin main
-git checkout master && git checkout main -- <files> && git commit -m "..." && git push origin master && git checkout main
+> **⚠ IMPORTANT: When the user says "push", they mean push to `master` so the live site is updated.**
+> This always involves two steps: commit+push to `main`, then sync to `master`.
+
+Full sync command:
+```powershell
+# Step 1 – commit to main
+git add -A
+git commit -m "..."
+git push origin main
+
+# Step 2 – sync HTML/CSS/JS to master (NO markdown files!)
+git checkout master
+git checkout main -- index.html style.css script.js timeline.html timeline.js blog.html ideas.html 404.html sitemap.xml robots.txt favicon.svg
+git commit -m "sync: ..."
+git push origin master
+git checkout main
 ```
 
-Never push markdown files (README.md, TODO.md) to `master` — they are dev-only.
+**Never push `README.md` or `TODO.md` to `master`** — they are dev-only and must never appear on the live site.
 
 ---
 
@@ -37,8 +50,8 @@ Never push markdown files (README.md, TODO.md) to `master` — they are dev-only
 
 | Page | File | Status |
 |------|------|--------|
-| Home | `index.html` | Design done; content mostly placeholder |
-| Timeline | `timeline.html` | Implemented; all detail views still placeholder |
+| Home | `index.html` | Design done; some content still placeholder |
+| Timeline | `timeline.html` | Implemented; most detail views still placeholder |
 | Blog | `blog.html` | Sticky note design done; 1 placeholder post |
 | Ideas | `ideas.html` | Pinboard done; 3 placeholder notes |
 | 404 | `404.html` | Done |
@@ -59,12 +72,32 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 - SEO: `robots.txt`, `sitemap.xml`, JSON-LD Person schema (index.html), Open Graph tags (all pages), canonical URLs, noindex on 404
 - Favicon: `favicon.svg` — dark square, "YM" in Times New Roman
 
-### index.html
-- Greeting: DE "Hallo, willkommen auf meiner Website."
-- Section 2: Aktuelles — 5 rows (filled). Rows: Aktuelle Beschäftigung, Momentanes Lieblingsprojekt, Beschäftigt mich gerade, Gerade am Lernen, Am Lesen / Am Schauen. `<p class="currently-updated">` below the list shows "Stand: März 2026" (multilingual).
-- Section 3: Lebenslauf auf einen Blick — School, Graduation, Leistungskurse, Stipendien (linked to #HLRS #ETA #YEEP), Ehrenamt, Languages
-  - Languages row: each chip opens a modal popup (all 3 texts still placeholder)
-- Section 4: Fähigkeiten — Java, Docker, CI/CD, Prompt Engineering, HTML & CSS (each arrow-linked to timeline entry)
+### index.html — Sections (in order)
+
+1. **Greeting** — "Hallo, willkommen auf meiner Website."
+
+2. **Was mich gerade beschäftigt / What's currently on my mind**
+   - 3 items: Beschäftigt mich gerade · Gerade am Lernen · Am Lesen/Am Schauen
+   - "Beschäftigt mich gerade" = "Wie ich leben will · was ich arbeiten will · was ich studieren will"
+   - `<p class="currently-updated">` shows "Stand: März 2026" (multilingual)
+
+3. **Aktuelle Beschäftigung & Projekte / Current Occupation & Projects**
+   - `.active-list` with 5 `.active-item` entries (`.active-name` + `.active-desc`):
+     1. 12. Klasse · KKSt (Leistungskurse, Abitur Juli 2026)
+     2. FIRST Tech Challenge (Java robot control)
+     3. YEEP · Cellios (3D simulator)
+     4. Nachhilfelehrer · Hui-Education e.V.
+     5. Diese Website
+
+4. **Eine Woche in meinem Leben / A week in my life**
+   - Hourly time grid (`.wc-time-grid`): 08:00–21:00, 8px per 15 min
+   - 8 columns: time label + Mo Di Mi Do Fr Sa So
+   - Blocks placed via exact `grid-row` / `grid-column` from real calendar data
+   - Colors: `.wc-school` (blue-tinted) · `.wc-tutor` (orange-tinted)
+   - Biweekly Tuesday afternoon blocks dimmed at 50% opacity
+   - Legend + horizontal scroll on narrow screens
+
+5. **Meine Fähigkeiten / My Skills** — heading only, intentionally empty (not yet decided)
 
 ### timeline.html
 - 4 accordion groups: Kindheit / Grundschule / Gymnasium / gymnasiale Oberstufe
@@ -73,6 +106,11 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 - When filtering: empty groups show "Keine Einträge für diesen Filter." (multilingual); page scrolls to first group with matches
 - Tag badges on each entry (language-aware)
 - Clicking entry opens detail view (CSS :target); back button returns
+- **Detail views with real content:** #HTML, #Frühstudium (intro only)
+- **Detail views with stubs (structure exists, personal text still `[Platzhalter]`):** #Nachhilfe, #ETA
+- **Detail views fully placeholder:** all others — see TODO.md
+- KKSt2 card preview text: "Meine letzten zwei Jahre am KKSt. Leistungskurse Mathematik, Wirtschaft, Physik."
+- Abitur GPA: 1,0 (fixed)
 
 ### blog.html / ideas.html
 - Sticky notes, warm beige (light) / dark brown (dark mode)
@@ -85,19 +123,23 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 
 | Range | Behaviour |
 |-------|-----------|
-| <=480px (phone) | 15px font, slim 1-row header, hamburger nav, stacked CV rows, 1-col ideas |
-| 481–768px (tablet) | 16px font, stacked header, nav visible, 2-col ideas |
+| <=480px (phone) | 15px font, slim 1-row header, hamburger nav, stacked label/value pairs (padding-top grouping), 1-col ideas |
+| 481–768px (tablet) | 16px font, stacked header, nav visible, stacked label/value pairs, 2-col ideas |
 | 769–1024px (iPad) | container 720px, 3-col ideas |
 | 1025–1440px (desktop) | container 860px |
 | >=1441px (wide/curved) | container 1000px, 18px font, 4-col ideas |
 
+**Mobile label/value grouping:** `display: block` on items, `padding-top` before each item (`:first-child` gets 0), `gap: 0` on list. This makes all whitespace appear *before* the label, visually bonding label to its value.
+
 ---
 
 ## CSS Architecture Notes
-- `--bg-color: #f2f2f0`, `--text-secondary: #505050` (darkened for contrast)
-- `.home-section--minor` opacity is 1.0 (was 0.8)
-- `.minicv-row dt` and `dd` both use `--text-primary`
-- `.currently-label` uses `--text-primary` + `font-weight: 600`
+- `--bg-color: #f5f0e8`, warm parchment palette
+- `.home-section--minor` opacity is 1.0
+- `.active-name` = bold, `.active-desc` = secondary color (used in "Aktuelle Beschäftigung & Projekte")
+- Week calendar grid row formula: `row = 2 + ((HH - 8) * 60 + MM) / 15`
+  - `.wc-time-grid`: `grid-template-rows: 2rem repeat(53, 8px)` — 08:00–21:00 in 15-min steps
+  - `.wc-school` = blue-tinted blocks · `.wc-tutor` = orange-tinted blocks · `.wc-cell--dim` = 55% opacity
 - `.navbar` base: wrapped in `@media (min-width: 481px) { display: block }` — prevents cascade override of mobile grid-collapse
 - `.navbar-inner` inside: `display: flex` with links
 - Mobile navbar: `grid-template-rows: 0fr → 1fr` transition (pixel-perfect, unlike max-height)
@@ -109,7 +151,7 @@ Extra files: `robots.txt`, `sitemap.xml`, `favicon.svg`
 - `script.js` uses `element.innerHTML` (not textContent) — data attrs can contain links
 - Dark mode flash prevention: inline script in every `<head>` before the CSS `<link>`
 - Files: UTF-8. PowerShell: use `-Encoding UTF8`
-- Never push README.md / TODO.md to `master`
+- **Never push `README.md` / `TODO.md` to `master`** — dev-only files
 
 ---
 
