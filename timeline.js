@@ -18,8 +18,12 @@ groups.forEach(group => {
     const header = group.querySelector('.timeline-group-header');
     const body   = group.querySelector('.timeline-group-body');
 
-    // All groups start collapsed
-    body.classList.add('collapsed');
+    // Collapse after first paint so the transition plays and produces the peek effect on load
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            body.classList.add('collapsed');
+        });
+    });
 
     header.addEventListener('click', () => {
         const isOpen = group.classList.contains('open');
