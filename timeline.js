@@ -69,9 +69,11 @@ filterButtons.forEach(btn => {
             body.classList.remove('collapsed');
         });
 
-        // Scroll to first group that has matching items
+        // Scroll to first VISIBLE group that has matching items.
+        // Must query the live DOM (after anti-chronological reversal) — not the stale NodeList.
         if (filter !== 'all') {
-            const firstMatch = [...groups].find(group => {
+            const liveGroups = [...document.querySelectorAll('.timeline-group')];
+            const firstMatch = liveGroups.find(group => {
                 const items = group.querySelectorAll('.timeline-item[data-tags]');
                 return [...items].some(i => i.style.display !== 'none');
             });
