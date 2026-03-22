@@ -31,6 +31,11 @@ if (groupsContainer) {
 
 // ── ACCORDION ──────────────────────────────────────────────
 // Queried AFTER reversal so the NodeList reflects the new order.
+// max-height is used (not grid-template-rows) so animation is smooth
+// between the 50px peek state and the full measured scrollHeight.
+
+const PEEK_HEIGHT = '50px';
+const stickyHeader = document.querySelector('.header');
 
 const groups = document.querySelectorAll('.timeline-group');
 
@@ -41,11 +46,26 @@ groups.forEach(group => {
     header.addEventListener('click', () => {
         const isOpen = group.classList.contains('open');
         if (isOpen) {
+            // Collapse: animate back to peek height
             group.classList.remove('open');
-            body.classList.add('collapsed');
+            body.style.maxHeight = PEEK_HEIGHT;
+
+            // If user was scrolled deep into this group, scroll back
+            // to the header so they don't end up staring at blank space
+            setTimeout(() => {
+                const stickyH = stickyHeader ? stickyHeader.offsetHeight : 0;
+                const rect = header.getBoundingClientRect();
+                if (rect.top < stickyH) {
+                    window.scrollTo({
+                        top: window.scrollY + rect.top - stickyH - 8,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 410);
         } else {
+            // Expand: measure actual content height and animate to it
             group.classList.add('open');
-            body.classList.remove('collapsed');
+            body.style.maxHeight = body.scrollHeight + 'px';
         }
     });
 });
@@ -83,7 +103,7 @@ filterButtons.forEach(btn => {
 
             placeholder.hidden = (visibleCount > 0 || filter === 'all');
             group.classList.add('open');
-            body.classList.remove('collapsed');
+            body.style.maxHeight = body.scrollHeight + 'px';
         });
 
         // Scroll to first group that has matching items
