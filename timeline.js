@@ -52,21 +52,19 @@ groups.forEach(group => {
 
 
 // ── INITIAL PEEK ANIMATION ─────────────────────────────────
-// On page load every group is open (1fr). We animate them all
-// shut to produce the intentional peek effect.
-//
-// Technique: inside a rAF (after first paint), call
-// `void body.offsetHeight` on each body to force a synchronous
-// layout reflow. This locks the browser's computed value at 1fr
-// for ALL groups — including those below the fold. Then
-// immediately adding 'collapsed' changes it to 0fr, so the
-// CSS transition (1fr → 0fr) fires reliably for every group.
+// Groups start with `collapsed` in HTML (0fr). Adding `peeking`
+// triggers a CSS @keyframes animation (0fr → 1fr → 0fr) that
+// is fully independent of paint timing — works for every group
+// regardless of viewport position. Groups are staggered by 120ms.
+// On `animationend`, `peeking` is removed; `collapsed` takes over.
 
-requestAnimationFrame(() => {
-    document.querySelectorAll('.timeline-group-body').forEach(body => {
-        void body.offsetHeight;          // lock in 1fr for this body
-        body.classList.add('collapsed'); // transition: 1fr → 0fr (peek)
-    });
+document.querySelectorAll('.timeline-group-body').forEach((body, i) => {
+    body.style.animationDelay = (i * 120) + 'ms';
+    body.classList.add('peeking');
+    body.addEventListener('animationend', () => {
+        body.classList.remove('peeking');
+        body.style.animationDelay = '';
+    }, { once: true });
 });
 
 
