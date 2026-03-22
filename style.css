@@ -36,105 +36,126 @@
 }
 
 html.dark-mode {
-    /* Dark Mode Colors — default (classic dark grey) */
-    --bg-color: #1a1a1a;
-    --surface-color: #2a2a2a;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --border-color: #404040;
-    --accent-color: #e0e0e0;
-    --marker-color: #ffffff;
-
-    /* Sticky note colors (dark mode) */
-    --note-bg-1: #3d2e1e;
-    --note-bg-2: #2f2118;
-    --note-bg-3: #352618;
-    --note-bg-4: #3b2a14;
+    /* Default dark — neutral charcoal, warm undertone */
+    --bg-color: #161616;
+    --surface-color: #262626;
+    --header-bg: #1c1c1c;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --border-color: #383838;
+    --accent-color: #d8d8d8;
+    --marker-color: #f0f0f0;
+    --note-bg-1: #302020;
+    --note-bg-2: #281818;
+    --note-bg-3: #2c1c1c;
+    --note-bg-4: #2a1a1a;
 }
 
-/* ── THEME: Forest ─────────────────────────────────────────
-   Near-black green base · rich saturated moss surface
-   Inspired by: Linear, Vercel dark (green variant)           */
+/* ── THEME 1: Forest ───────────────────────────────────────
+   Research: Nature UIs, Solarized dark, GitHub dark default
+   Design principle: two-hue split — bg leans cool blue-green,
+   cards lean warm yellow-green (moss). Header is distinct teal.
+   Text: pale mint-cream (slightly warm, easier than pure white)
+   ────────────────────────────────────────────────────────── */
 html.dark-forest {
-    --bg-color: #0c1a0e;
-    --surface-color: #184020;
-    --text-primary: #d4eed0;
-    --text-secondary: #70b870;
-    --border-color: #2a6032;
-    --accent-color: #50c858;
-    --marker-color: #50c858;
-    --note-bg-1: #1a4a20;
-    --note-bg-2: #143818;
-    --note-bg-3: #1e5024;
-    --note-bg-4: #16421c;
+    --bg-color:      #0a1510;   /* very dark, blue-shifted green  */
+    --surface-color: #16280c;   /* forest cards: warmer, more yellow-green */
+    --header-bg:     #0d1e14;   /* teal-green header: sits between bg & surface */
+    --text-primary:  #c8e6c4;   /* pale warm mint — not pure white, reduces strain */
+    --text-secondary:#6aaa72;   /* medium sage                    */
+    --border-color:  #224a1e;   /* deep visible forest border     */
+    --accent-color:  #4ec854;   /* vibrant spring green           */
+    --marker-color:  #4ec854;
+    --note-bg-1: #183018;
+    --note-bg-2: #122610;
+    --note-bg-3: #1c3414;
+    --note-bg-4: #142a12;
 }
 
-/* ── THEME: Ocean ──────────────────────────────────────────
-   Near-black indigo base · deep royal blue surface
-   Inspired by: Tailwind UI dark, Stripe dark dashboard       */
+/* ── THEME 2: Ocean ────────────────────────────────────────
+   Research: GitHub dark dimmed, Stripe dark, Linear app
+   Design principle: bg deepest navy-black, cards shift to
+   pure maritime blue, header leans indigo (cooler hue).
+   Text: pale periwinkle-white (GitHub's choice for comfort)
+   ────────────────────────────────────────────────────────── */
 html.dark-navy {
-    --bg-color: #090d1e;
-    --surface-color: #142050;
-    --text-primary: #c8d8ff;
-    --text-secondary: #6888d8;
-    --border-color: #203070;
-    --accent-color: #5080ff;
-    --marker-color: #5080ff;
-    --note-bg-1: #182860;
-    --note-bg-2: #102050;
-    --note-bg-3: #1c2e6a;
-    --note-bg-4: #142458;
+    --bg-color:      #08101e;   /* deep sea, near-black indigo    */
+    --surface-color: #102438;   /* ocean midnight blue — clearly lighter */
+    --header-bg:     #0c1830;   /* indigo-navy header — hue shift */
+    --text-primary:  #c4d8f4;   /* pale steel-blue white          */
+    --text-secondary:#5c80c8;   /* muted periwinkle               */
+    --border-color:  #1a326a;   /* deep navy border               */
+    --accent-color:  #4090ef;   /* bright cobalt                  */
+    --marker-color:  #4090ef;
+    --note-bg-1: #102244;
+    --note-bg-2: #0c1c3a;
+    --note-bg-3: #14264c;
+    --note-bg-4: #0e2040;
 }
 
-/* ── THEME: Cayenne ────────────────────────────────────────
-   Near-black crimson base · deep red surface · warm rose text
-   Inspired by: YouTube Studio dark, Figma's deep red accents */
+/* ── THEME 3: Cayenne ──────────────────────────────────────
+   Research: Bear app dark, Dragon theme, Catppuccin Mocha
+   Design principle: bg near-black crimson, cards shift to
+   deep burgundy-plum (slight purple hue), header is red-black.
+   Text: pale blush-rose (warm tinted, most comfortable for red)
+   ────────────────────────────────────────────────────────── */
 html.dark-ember {
-    --bg-color: #150a08;
-    --surface-color: #3a1010;
-    --text-primary: #f5ddd8;
-    --text-secondary: #c07068;
-    --border-color: #602020;
-    --accent-color: #e06040;
-    --marker-color: #e06040;
-    --note-bg-1: #441818;
-    --note-bg-2: #380f0f;
-    --note-bg-3: #4a1c1c;
-    --note-bg-4: #3e1414;
+    --bg-color:      #160a0c;   /* near-black deep crimson        */
+    --surface-color: #2c1418;   /* burgundy-plum cards (purple shift) */
+    --header-bg:     #1c0e12;   /* dark red-maroon header         */
+    --text-primary:  #f0dce0;   /* very pale blush white          */
+    --text-secondary:#b07080;   /* muted rose-mauve               */
+    --border-color:  #4e2030;   /* deep crimson border            */
+    --accent-color:  #e04868;   /* vibrant rose-red               */
+    --marker-color:  #e04868;
+    --note-bg-1: #3a1820;
+    --note-bg-2: #2e1018;
+    --note-bg-3: #3e1c24;
+    --note-bg-4: #34141c;
 }
 
-/* ── THEME: Violet ─────────────────────────────────────────
-   Near-black purple base · deep rich indigo surface
-   Inspired by: Notion dark, Loom, GitHub Copilot UI          */
+/* ── THEME 4: Violet ───────────────────────────────────────
+   Research: Notion dark, Raycast, GitHub Copilot, Linear
+   Design principle: bg blue-purple, cards shift warm-violet
+   (indigo leans blue, cards lean red-purple). Header is coolest.
+   Text: pale lavender — #1 most-used dark-mode text in modern
+   design (comfortable low-contrast tint to accent hue)
+   ────────────────────────────────────────────────────────── */
 html.dark-aurora {
-    --bg-color: #0c0814;
-    --surface-color: #241848;
-    --text-primary: #ddd0ff;
-    --text-secondary: #9878d0;
-    --border-color: #402878;
-    --accent-color: #8050e8;
-    --marker-color: #9060f8;
-    --note-bg-1: #2c2060;
-    --note-bg-2: #201852;
-    --note-bg-3: #302468;
-    --note-bg-4: #261c58;
+    --bg-color:      #0d0a1e;   /* near-black blue-purple         */
+    --surface-color: #1e1648;   /* rich deep violet, warm-biased  */
+    --header-bg:     #120f28;   /* deep cool indigo header        */
+    --text-primary:  #ddd0ff;   /* pale lavender — industry standard */
+    --text-secondary:#9070c8;   /* medium muted purple            */
+    --border-color:  #342868;   /* indigo border                  */
+    --accent-color:  #8858e8;   /* vivid purple                   */
+    --marker-color:  #9868f0;
+    --note-bg-1: #261e5a;
+    --note-bg-2: #1e184e;
+    --note-bg-3: #2a2260;
+    --note-bg-4: #221c54;
 }
 
-/* ── THEME: Amber ──────────────────────────────────────────
-   Near-black brown base · deep rich amber/dune surface
-   Inspired by: Obsidian app dark, Bear app, warm editorial   */
+/* ── THEME 5: Amber ────────────────────────────────────────
+   Research: Obsidian app, Bear app, warm editorial themes
+   Design principle: bg darkest near-black warm brown, cards
+   shift to amber-ochre (more orange), header slightly red-brown.
+   Text: warm parchment — research shows slightly warm tint is
+   most comfortable for long reading sessions (reduces blue light)
+   ────────────────────────────────────────────────────────── */
 html.dark-walnut {
-    --bg-color: #0e0900;
-    --surface-color: #3a2400;
-    --text-primary: #f8ead0;
-    --text-secondary: #c09040;
-    --border-color: #503400;
-    --accent-color: #f0a820;
-    --marker-color: #f0a820;
-    --note-bg-1: #462c00;
-    --note-bg-2: #382400;
-    --note-bg-3: #4e3000;
-    --note-bg-4: #3e2800;
+    --bg-color:      #110d00;   /* near-black warm brown          */
+    --surface-color: #281a04;   /* deep amber-ochre (orange shift) */
+    --header-bg:     #1a1000;   /* darker red-brown header        */
+    --text-primary:  #f4e8c0;   /* warm parchment — most comfortable for reading */
+    --text-secondary:#b09040;   /* muted gold-tan                 */
+    --border-color:  #3e2e00;   /* warm dark border               */
+    --accent-color:  #f0a800;   /* warm golden yellow             */
+    --marker-color:  #f0a800;
+    --note-bg-1: #342010;
+    --note-bg-2: #2a1a0a;
+    --note-bg-3: #382414;
+    --note-bg-4: #2e1c0c;
 }
 
 /* ── THEME PICKER ──────────────────────────────────────────
@@ -222,7 +243,7 @@ body {
 .header {
     padding: 2rem 0;
     border-bottom: 1px solid var(--border-color);
-    background-color: var(--bg-color);
+    background-color: var(--header-bg, var(--bg-color));
     position: sticky;
     top: 0;
     z-index: 100;
@@ -397,8 +418,13 @@ body {
     border-color: var(--accent-color);
 }
 
-html.dark-mode .timeline-content:hover {
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+html.dark-mode .timeline-content:hover,
+html.dark-forest .timeline-content:hover,
+html.dark-navy .timeline-content:hover,
+html.dark-ember .timeline-content:hover,
+html.dark-aurora .timeline-content:hover,
+html.dark-walnut .timeline-content:hover {
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.08);
 }
 
 .timeline-year {
@@ -1094,11 +1120,26 @@ html.dark-mode .detail-container {
     display: grid;
     grid-template-rows: 1fr;
     overflow: hidden;
+    position: relative;
     transition: grid-template-rows 0.35s ease;
 }
 
+/* Peek: groups show ~60px of first entry when collapsed */
 .timeline-group-body.collapsed {
-    grid-template-rows: 0fr;
+    grid-template-rows: 60px;
+}
+
+/* Fade gradient at the bottom of the peek area */
+.timeline-group-body.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: linear-gradient(to bottom, transparent, var(--bg-color));
+    pointer-events: none;
+    z-index: 2;
 }
 
 .timeline-group-inner {
