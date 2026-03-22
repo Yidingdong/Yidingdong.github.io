@@ -966,8 +966,8 @@ html.dark-mode .detail-container {
    Stagger via animation-delay set per-group in timeline.js. */
 @keyframes timeline-peek {
     0%   { grid-template-rows: 0fr; }
-    35%  { grid-template-rows: 1fr; }
-    65%  { grid-template-rows: 1fr; }
+    35%  { grid-template-rows: 70px; }
+    65%  { grid-template-rows: 70px; }
     100% { grid-template-rows: 0fr; }
 }
 
