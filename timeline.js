@@ -18,8 +18,8 @@ groups.forEach(group => {
     const header = group.querySelector('.timeline-group-header');
     const body   = group.querySelector('.timeline-group-body');
 
-    // All groups start collapsed
-    body.classList.add('collapsed');
+    // Groups start with 'open' in HTML — brief visible peek, then animate closed
+    setTimeout(() => body.classList.add('collapsed'), 300);
 
     header.addEventListener('click', () => {
         const isOpen = group.classList.contains('open');
