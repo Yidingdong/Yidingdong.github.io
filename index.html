@@ -8,10 +8,10 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <script>if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark-mode');}</script>
+    <script>(function(){var t=localStorage.getItem('theme');var v=['dark','dark-forest','dark-navy','dark-ember','dark-aurora','dark-walnut'];if(t==='dark')document.documentElement.classList.add('dark-mode');else if(v.indexOf(t)>-1)document.documentElement.classList.add(t);})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Persönliche Website von Yiding Ma (Itsyid) – Schüler am KKSt Stuttgart, Stipendiat (HLRS, ETA, YEEP), Entwickler. Zeitstrahl, Blog und Ideen.">
-    <meta name="keywords" content="Yiding Ma, Yiding, Itsyid, KKSt, Königin-Katharina-Stift, Stuttgart, Schüler, Entwickler, HLRS, Stipendium">
+    <meta name="description" content="Eine Website von Yiding Ma – Schüler am KKSt Stuttgart, Entwickler & Hobby-Philosoph. Mein Leben, Blog und Ideen.">
+    <meta name="keywords" content="Yiding Ma, Yiding, Itsyid, KKSt, Königin-Katharina-Stift, Schüler, Entwickler">
     <meta name="author" content="Yiding Ma">
     <link rel="canonical" href="https://itsyid.com/">
 
@@ -19,7 +19,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://itsyid.com/">
     <meta property="og:title" content="Yiding Ma">
-    <meta property="og:description" content="Persönliche Website von Yiding Ma (Itsyid) – Schüler am KKSt Stuttgart, Stipendiat und Entwickler.">
+    <meta property="og:description" content="Eine Website von Yiding Ma – Schüler am KKSt Stuttgart, Entwickler & Hobby-Philosoph. Mein Leben, Blog und Ideen.">
     <meta property="og:locale" content="de_DE">
 
     <!-- Structured data: Person -->
@@ -33,7 +33,7 @@
         "alternateName": ["Yiding", "Itsyid", "马亦丁"],
         "url": "https://itsyid.com",
         "sameAs": ["https://github.com/Yidingdong"],
-        "description": "Yiding Ma (Itsyid) – Schüler am Königin-Katharina-Stift-Gymnasium (KKSt) Stuttgart, Stipendiat (HLRS, Entrepreneurship Talent Academy, YEEP), Softwareentwickler.",
+        "description": "Eine Website von Yiding Ma – Schüler am KKSt Stuttgart, Entwickler & Hobby-Philosoph. Mein Leben, Blog und Ideen.",
         "alumniOf": {
             "@type": "EducationalOrganization",
             "name": "Königin-Katharina-Stift-Gymnasium Stuttgart",
@@ -41,12 +41,12 @@
         },
         "knowsAbout": ["Java", "Docker", "CI/CD", "HTML", "CSS", "Prompt Engineering"],
         "knowsLanguage": ["de", "en", "zh"],
-        "nationality": "DE"
+        "nationality": "CN"
     }
     </script>
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <title>Yiding Ma – Schüler, Stipendiat & Entwickler | itsyid.com</title>
+    <title>Yiding Ma – Schüler, Entwickler & Hobby-Philosoph | itsyid.com</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -61,6 +61,13 @@
                         <button class="lang-btn" data-lang="en">EN</button>
                         <button class="lang-btn" data-lang="zh">中文</button>
                     </div>
+                    <div class="theme-picker" aria-label="Farbschema wählen">
+                        <button class="theme-dot" data-theme="dark-forest"     title="Forest"      aria-label="Forest"></button>
+                        <button class="theme-dot" data-theme="dark-navy"       title="Midnight"    aria-label="Midnight"></button>
+                        <button class="theme-dot" data-theme="dark-ember"      title="Ember"       aria-label="Ember"></button>
+                        <button class="theme-dot" data-theme="dark-aurora"     title="Aurora"      aria-label="Aurora"></button>
+                        <button class="theme-dot" data-theme="dark-walnut"     title="Walnut"      aria-label="Walnut"></button>
+                    </div>
                     <button class="theme-toggle" aria-label="Toggle Dark Mode">
                         <span class="theme-text">DARK</span>
                     </button>
@@ -70,7 +77,7 @@
             <nav class="navbar">
                 <div class="navbar-inner">
                 <a href="index.html" class="nav-link active" data-de="Start" data-en="Home" data-zh="首页">Start</a>
-                <a href="timeline.html" class="nav-link" data-de="Zeitstrahl" data-en="Timeline" data-zh="时间线">Zeitstrahl</a>
+                <a href="timeline.html" class="nav-link" data-de="Mein Leben" data-en="My life" data-zh="我的一生">Mein Leben</a>
                 <a href="blog.html" class="nav-link" data-de="Blog" data-en="Blog" data-zh="博客">Blog</a>
                 <a href="ideas.html" class="nav-link" data-de="Ideen" data-en="Ideas" data-zh="主意">Ideen</a>
                 </div>
@@ -95,81 +102,61 @@
                 <h2 class="home-section-title"
                     data-de="Was mich gerade beschäftigt"
                     data-en="What's currently on my mind"
-                    data-zh="最近占据我脑子里的事">Was mich gerade beschäftigt</h2>
+                    data-zh="我最近在意的事情">Was mich gerade beschäftigt</h2>
                 <ul class="currently-list">
                     <li class="currently-item">
                         <span class="currently-label"
                               data-de="Beschäftigt mich gerade"
                               data-en="Currently on my mind"
-                              data-zh="最近在思考">→ Beschäftigt mich gerade</span>
+                              data-zh="最近思考的事情">Beschäftigt mich gerade</span>
                         <span class="currently-value"
-                              data-de="Wie ich leben will · was ich arbeiten will · was ich studieren will"
+                              data-de="Wie ich leben will · was ich als Job machen will · was ich studieren will"
                               data-en="How I want to live · what I want to work · what I want to study"
-                              data-zh="想过怎样的生活 · 想做什么工作 · 想学什么专业">Wie ich leben will · was ich arbeiten will · was ich studieren will</span>
+                              data-zh="想过什么人生 · 想干什么工作 · 想读什么专业">Wie ich leben will · was ich als Job machen will · was ich studieren will</span>
                     </li>
                     <li class="currently-item">
                         <span class="currently-label"
                               data-de="Gerade am Lernen"
                               data-en="Currently learning"
-                              data-zh="正在学">→ Gerade am Lernen</span>
+                              data-zh="正在学">Gerade am Lernen</span>
                         <span class="currently-value"
-                              data-de="Besser mit Zeit umgehen &ndash; mehr Disziplin"
-                              data-en="Better time management and self-discipline"
+                              data-de="Besser mit Zeit umzugehen &ndash; mehr Disziplin"
+                              data-en="Better time management and more self-discipline"
                               data-zh="时间管理与自律">Besser mit Zeit umgehen &ndash; mehr Disziplin</span>
                     </li>
                     <li class="currently-item">
                         <span class="currently-label"
                               data-de="Am Lesen / Am Schauen"
                               data-en="Reading / watching"
-                              data-zh="在看 / 在读">→ Am Lesen / Am Schauen</span>
+                              data-zh="在看 / 在读">Am Lesen / Am Schauen</span>
                         <span class="currently-value"
-                              data-de="&#xAB;Who am I?&#xBB; (Film) &middot; Måneskin"
-                              data-en="&#xAB;Who am I?&#xBB; (film) &middot; Måneskin"
-                              data-zh="《Who am I?》（电影）&middot; Måneskin">&#xAB;Who am I?&#xBB; (Film) &middot; Måneskin</span>
+                              data-de="&#xAB;Who am I?&#xBB; (Film) &middot; Måneskin (Band)"
+                              data-en="&#xAB;Who am I?&#xBB; (film) &middot; Måneskin(Band)"
+                              data-zh="《Who am I?》（电影）&middot; Måneskin (乐队)">&#xAB;Who am I?&#xBB; (Film) &middot; Måneskin</span>
                     </li>
                 </ul>
                 <p class="currently-updated"
                    data-de="Stand: März 2026"
                    data-en="Last updated: March 2026"
-                   data-zh="更新于：2026年3月">Stand: März 2026</p>
+                   data-zh="上次更新：2026年 3月">Stand: März 2026</p>
             </section>
 
             <!-- 3. What I'm currently up to -->
             <section class="home-section home-section--minor" id="active">
                 <h2 class="home-section-title home-section-title--minor"
-                    data-de="Aktuelle Beschäftigung &amp; Projekte"
-                    data-en="Current Occupation &amp; Projects"
+                    data-de="Aktuelle Beschäftigungen &amp; Projekte"
+                    data-en="Current Occupations &amp; Projects"
                     data-zh="当前职业与项目">Aktuelle Beschäftigung &amp; Projekte</h2>
                 <ul class="active-list">
                     <li class="active-item">
                         <span class="active-name"
-                              data-de="12. Klasse &middot; Königin-Katharina-Stift-Gymnasium"
-                              data-en="12th Grade &middot; Königin-Katharina-Stift Gymnasium"
-                              data-zh="12年级 &middot; KKSt中学">12. Klasse &middot; Königin-Katharina-Stift-Gymnasium</span>
+                              data-de="Schüler am Königin-Katharina-Stift-Gymnasium &middot; 12. Klasse"
+                              data-en="Student at Königin-Katharina-Stift Gymnasium &middot; 12th Grade"
+                              data-zh="在读于 Königin-Katharina-Stift 中学 &middot; 12年级">12. Klasse &middot; Königin-Katharina-Stift-Gymnasium</span>
                         <span class="active-desc"
-                              data-de="Leistungskurse Mathematik, Wirtschaft, Physik &middot; Abitur Juli 2026"
-                              data-en="Advanced courses in Mathematics, Economics, Physics &middot; Abitur July 2026"
-                              data-zh="主修：数学、经济、物理 &middot; Abitur 2026年7月">Leistungskurse Mathematik, Wirtschaft, Physik &middot; Abitur Juli 2026</span>
-                    </li>
-                    <li class="active-item">
-                        <span class="active-name"
-                              data-de="FIRST Tech Challenge"
-                              data-en="FIRST Tech Challenge"
-                              data-zh="FIRST Tech Challenge">FIRST Tech Challenge</span>
-                        <span class="active-desc"
-                              data-de="Internationaler Robotik-Wettbewerb &middot; Programmierung der Steuerung in Java"
-                              data-en="International robotics competition &middot; Programming the robot control in Java"
-                              data-zh="国际机器人竞赛 &middot; 用Java编写控制程序">Internationaler Robotik-Wettbewerb &middot; Programmierung der Steuerung in Java</span>
-                    </li>
-                    <li class="active-item">
-                        <span class="active-name"
-                              data-de="YEEP-Stipendiat &middot; Unternehmenschallenge mit Cellios"
-                              data-en="YEEP Scholar &middot; Company challenge with Cellios"
-                              data-zh="YEEP栽培生 &middot; Cellios企业挑战">YEEP-Stipendiat &middot; Unternehmenschallenge mit Cellios</span>
-                        <span class="active-desc"
-                              data-de="Programmierung eines 3D-Simulators für Kabelkonfektionszellen"
-                              data-en="Programming a 3D simulator for cable assembly cells"
-                              data-zh="为电缆组装单元开发3D仿真器">Programmierung eines 3D-Simulators für Kabelkonfektionszellen</span>
+                              data-de="Leistungskurse: Mathematik, Wirtschaft, Physik &middot; Abitur (vorraussichtlich) Juli 2026"
+                              data-en="Advanced courses: Mathematics, Economics, Physics &middot; Abitur (expected) July 2026"
+                              data-zh="主修课：数学、经济、物理 &middot; 预计2026年7月毕业">Leistungskurse Mathematik, Wirtschaft, Physik &middot; Abitur Juli 2026</span>
                     </li>
                     <li class="active-item">
                         <span class="active-name"
@@ -177,9 +164,9 @@
                               data-en="Tutor &middot; Hui-Education e.V."
                               data-zh="辅导老师 &middot; Hui-Education e.V.">Nachhilfelehrer &middot; Hui-Education e.V.</span>
                         <span class="active-desc"
-                              data-de="Ehrenamtliche Nachhilfe für Schülerinnen und Schüler"
-                              data-en="Volunteer tutoring for students"
-                              data-zh="为学生提供志愿辅导">Ehrenamtliche Nachhilfe für Schülerinnen und Schüler</span>
+                              data-de="Nachhilfe für Schülerinnen und Schüler - ~10h/Woche"
+                              data-en="Tutoring for students - ~10h/week"
+                              data-zh="给学生辅导功课 - 每周约10小时">Ehrenamtliche Nachhilfe für Schülerinnen und Schüler</span>
                     </li>
                     <li class="active-item">
                         <span class="active-name"
@@ -187,9 +174,29 @@
                               data-en="This website"
                               data-zh="这个网站">Diese Website</span>
                         <span class="active-desc"
-                              data-de="Laufend weiterentwickelt"
-                              data-en="Continuously being developed"
-                              data-zh="持续开发中">Laufend weiterentwickelt</span>
+                              data-de="Momentan am Weiterentwickeln & vervollständigen"
+                              data-en="Currently further developing & completing"
+                              data-zh="目前正在开发和完善中">Laufend weiterentwickelt</span>
+                    </li>
+                    <li class="active-item">
+                        <span class="active-name"
+                              data-de="Abiturvorbereitung"
+                              data-en="Abitur-preparation"
+                              data-zh="备战高考">FIRST Tech Challenge"</span>
+                        <span class="active-desc"
+                              data-de="Abitur ist doch nicht so easy (Hätte vor allem in Physik mehr aufpassen sollen)"
+                              data-en="Gradutating with proper grades requires more work than expected (Should've paid more attention during physics class)"
+                              data-zh="高考还是有些难度的 (还是应该在物理课上多听课的)">Abitur ist doch nicht so easy</span>
+                    </li>
+                    <li class="active-item">
+                        <span class="active-name"
+                              data-de="YEEP-Stipendiat"
+                              data-en="YEEP Scholar"
+                              data-zh="YEEP栽培生">YEEP-Stipendiat</span>
+                        <span class="active-desc"
+                              data-de="12 monatiges Stipendium mit Mentoring, Softskill-Workshops, Unternehmensbesuchen & einem Unternehmensprojekt"
+                              data-en="12-month scholarship with mentoring, soft skill workshops, company visits & a company project"
+                              data-zh="为期12个月的奖学金，包括指导、软技能工作坊、公司参观和公司项目">12 monatiges Stipendium mit Mentoring, Softskill-Workshops, Unternehmensbesuchen & einem Unternehmensprojekt</span>
                     </li>
                 </ul>
             </section>
@@ -197,8 +204,8 @@
             <!-- 4. Week in my life -->
             <section class="home-section home-section--minor" id="week">
                 <h2 class="home-section-title home-section-title--minor"
-                    data-de="Eine Woche in meinem Leben"
-                    data-en="A week in my life"
+                    data-de="Eine typische Woche in meinem Leben"
+                    data-en="A typical week in my life"
                     data-zh="我的一周">Eine Woche in meinem Leben</h2>
                 <div class="week-cal-wrap">
                     <div class="wc-time-grid">
@@ -243,65 +250,65 @@
                         <div class="wc-tg-hline"  style="grid-row:54;grid-column:2/-1"></div>
 
                         <!-- Mo (col 2): school 08–09:30, 09:50–11:20, 14:15–15:45; tutoring 18:15–19:00, 19:00–19:45 -->
-                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:2" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:2" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:2" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:43/46;grid-column:2" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:46/49;grid-column:2" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:2" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:2" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:2" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:43/46;grid-column:2" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:46/49;grid-column:2" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
 
                         <!-- Di (col 3): school 08–09:30, 09:50–11:20, 11:40–13:10; school biweekly 14:15–17:35 -->
-                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:3" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:3" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:17/23;grid-column:3" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:3" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:3" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:17/23;grid-column:3" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
                         <div class="wc-tg-block wc-school wc-cell--dim" style="grid-row:27/33;grid-column:3" data-de="Schule (jede 2. Woche)" data-en="School (every other week)" data-zh="上学（隔周）">Schule*</div>
                         <div class="wc-tg-block wc-school wc-cell--dim" style="grid-row:34/40;grid-column:3" data-de="Schule (jede 2. Woche)" data-en="School (every other week)" data-zh="上学（隔周）">Schule*</div>
 
                         <!-- Mi (col 4): school 08–13:10, 14:15–17:35; tutoring 18:30–19:15, 20:00–20:45 -->
-                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:4" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:4" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:17/23;grid-column:4" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:4" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:34/40;grid-column:4" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:44/47;grid-column:4" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:50/53;grid-column:4" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:4" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:4" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:17/23;grid-column:4" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:4" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:34/40;grid-column:4" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:44/47;grid-column:4" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:50/53;grid-column:4" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
 
                         <!-- Do (col 5): school 09:50–11:20, 14:15–15:45; tutoring 17:00–17:45 -->
-                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:5" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:5" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:38/41;grid-column:5" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:5" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:5" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:38/41;grid-column:5" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
 
                         <!-- Fr (col 6): school 08–09:30, 09:50–11:20, 11:40–13:10, 14:15–15:45 -->
-                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:6" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:6" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:17/23;grid-column:6" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
-                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:6" data-de="Schule" data-en="School" data-zh="学校">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:2/8;grid-column:6" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:9/15;grid-column:6" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:17/23;grid-column:6" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
+                        <div class="wc-tg-block wc-school" style="grid-row:27/33;grid-column:6" data-de="Schule" data-en="School" data-zh="上学">Schule</div>
 
                         <!-- Sa (col 7): tutoring 09:30–12:00 (morning cluster), 18:10–20:45 (evening cluster) -->
-                        <div class="wc-tg-block wc-tutor" style="grid-row:8/11;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:11/15;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:15/18;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:43/46;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:46/49;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:50/53;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:8/11;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:11/15;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:15/18;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:43/46;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:46/49;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:50/53;grid-column:7" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
 
                         <!-- So (col 8): tutoring 09:10–12:45 (morning cluster) -->
-                        <div class="wc-tg-block wc-tutor" style="grid-row:7/10;grid-column:8" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:10/16;grid-column:8" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
-                        <div class="wc-tg-block wc-tutor" style="grid-row:17/21;grid-column:8" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:7/10;grid-column:8" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:10/16;grid-column:8" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
+                        <div class="wc-tg-block wc-tutor" style="grid-row:17/21;grid-column:8" data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe</div>
                     </div>
                 </div>
                 <div class="week-cal-legend">
                     <span class="wc-legend-item"><span class="wc-legend-dot wc-school"></span><span data-de="Schule" data-en="School" data-zh="学校">Schule</span></span>
-                    <span class="wc-legend-item"><span class="wc-legend-dot wc-tutor"></span><span data-de="Nachhilfe (Ehrenamt)" data-en="Tutoring (voluntary)" data-zh="辅导（志愿）">Nachhilfe (Ehrenamt)</span></span>
+                    <span class="wc-legend-item"><span class="wc-legend-dot wc-tutor"></span><span data-de="Nachhilfe" data-en="Tutoring" data-zh="辅导课">Nachhilfe (Ehrenamt)</span></span>
                 </div>
             </section>
 
             <!-- 5. Skills -->
             <section class="home-section home-section--minor" id="skills">
                 <h2 class="home-section-title home-section-title--minor"
-                    data-de="Mein Skillset"
-                    data-en="My Skills"
-                    data-zh="我的技能">Mein Skillset</h2>
+                    data-de="Mein Skillset (noch zu Vervollständigen)"
+                    data-en="My Skills (yet to be completed)"
+                    data-zh="我的技能 (暂代完善)">Mein Skillset</h2>
             </section>
 
         </div>

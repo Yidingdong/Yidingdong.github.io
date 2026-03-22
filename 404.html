@@ -8,7 +8,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <script>if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark-mode');}</script>
+    <script>(function(){var t=localStorage.getItem('theme');var v=['dark','dark-forest','dark-navy','dark-ember','dark-aurora','dark-walnut'];if(t==='dark')document.documentElement.classList.add('dark-mode');else if(v.indexOf(t)>-1)document.documentElement.classList.add(t);})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Seite nicht gefunden – Yiding Ma">
     <meta name="robots" content="noindex">
@@ -29,6 +29,13 @@
                         <button class="lang-btn" data-lang="en">EN</button>
                         <button class="lang-btn" data-lang="zh">中文</button>
                     </div>
+                    <div class="theme-picker" aria-label="Farbschema wählen">
+                        <button class="theme-dot" data-theme="dark-forest"     title="Forest"      aria-label="Forest"></button>
+                        <button class="theme-dot" data-theme="dark-navy"       title="Midnight"    aria-label="Midnight"></button>
+                        <button class="theme-dot" data-theme="dark-ember"      title="Ember"       aria-label="Ember"></button>
+                        <button class="theme-dot" data-theme="dark-aurora"     title="Aurora"      aria-label="Aurora"></button>
+                        <button class="theme-dot" data-theme="dark-walnut"     title="Walnut"      aria-label="Walnut"></button>
+                    </div>
                     <button class="theme-toggle" aria-label="Toggle Dark Mode">
                         <span class="theme-text">DARK</span>
                     </button>
@@ -38,7 +45,7 @@
             <nav class="navbar">
                 <div class="navbar-inner">
                 <a href="index.html" class="nav-link" data-de="Start" data-en="Home" data-zh="首页">Start</a>
-                <a href="timeline.html" class="nav-link" data-de="Zeitstrahl" data-en="Timeline" data-zh="时间线">Zeitstrahl</a>
+                <a href="timeline.html" class="nav-link" data-de="Mein Leben" data-en="My Life" data-zh="我的一生">Mein Leben</a>
                 <a href="blog.html" class="nav-link" data-de="Blog" data-en="Blog" data-zh="博客">Blog</a>
                 <a href="ideas.html" class="nav-link" data-de="Ideen" data-en="Ideas" data-zh="主意">Ideen</a>
                 </div>

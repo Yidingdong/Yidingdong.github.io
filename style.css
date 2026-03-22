@@ -36,7 +36,7 @@
 }
 
 html.dark-mode {
-    /* Dark Mode Colors */
+    /* Dark Mode Colors — default (classic dark grey) */
     --bg-color: #1a1a1a;
     --surface-color: #2a2a2a;
     --text-primary: #ffffff;
@@ -51,6 +51,144 @@ html.dark-mode {
     --note-bg-3: #352618;
     --note-bg-4: #3b2a14;
 }
+
+/* ── THEME: Forest ─────────────────────────────────────────
+   Deep forest green, warm sage accents, cream text           */
+html.dark-forest {
+    --bg-color: #0d1a0f;
+    --surface-color: #172314;
+    --text-primary: #e8f0e0;
+    --text-secondary: #92b085;
+    --border-color: #2d4a28;
+    --accent-color: #a8d48a;
+    --marker-color: #a8d48a;
+    --note-bg-1: #1a2e14;
+    --note-bg-2: #142410;
+    --note-bg-3: #1e3318;
+    --note-bg-4: #162a12;
+}
+
+/* ── THEME: Midnight ───────────────────────────────────────
+   Deep navy blue, pale blue-white text, cobalt highlights    */
+html.dark-navy {
+    --bg-color: #080e1f;
+    --surface-color: #101828;
+    --text-primary: #dce8ff;
+    --text-secondary: #7898cc;
+    --border-color: #1e3060;
+    --accent-color: #7ab0ff;
+    --marker-color: #7ab0ff;
+    --note-bg-1: #101c38;
+    --note-bg-2: #0c1830;
+    --note-bg-3: #0e1a34;
+    --note-bg-4: #12203e;
+}
+
+/* ── THEME: Ember ──────────────────────────────────────────
+   Charcoal base, deep reddish-brown surface, warm amber text */
+html.dark-ember {
+    --bg-color: #180d08;
+    --surface-color: #261410;
+    --text-primary: #f5dcc0;
+    --text-secondary: #c08858;
+    --border-color: #4a2018;
+    --accent-color: #e8a060;
+    --marker-color: #e8a060;
+    --note-bg-1: #2e1810;
+    --note-bg-2: #22100a;
+    --note-bg-3: #321a0e;
+    --note-bg-4: #281408;
+}
+
+/* ── THEME: Aurora ─────────────────────────────────────────
+   Dark teal-slate base, ghostly cyan-mint accents            */
+html.dark-aurora {
+    --bg-color: #080f14;
+    --surface-color: #0f1e26;
+    --text-primary: #d0f0ec;
+    --text-secondary: #5db8b0;
+    --border-color: #164040;
+    --accent-color: #60d8c8;
+    --marker-color: #60d8c8;
+    --note-bg-1: #0e2428;
+    --note-bg-2: #0a1c20;
+    --note-bg-3: #102830;
+    --note-bg-4: #0c2024;
+}
+
+/* ── THEME: Walnut ─────────────────────────────────────────
+   Deep warm brown-black, golden sepia tones, dark wood feel  */
+html.dark-walnut {
+    --bg-color: #120c06;
+    --surface-color: #1e1409;
+    --text-primary: #f0ddb0;
+    --text-secondary: #b09050;
+    --border-color: #3a2810;
+    --accent-color: #d4a840;
+    --marker-color: #d4a840;
+    --note-bg-1: #2a1c0a;
+    --note-bg-2: #221606;
+    --note-bg-3: #2e2008;
+    --note-bg-4: #26180a;
+}
+
+/* ── THEME PICKER ──────────────────────────────────────────
+   Dots shown only when dark mode is active                   */
+.theme-picker {
+    display: none;
+    align-items: center;
+    gap: 5px;
+}
+
+html.dark-mode .theme-picker,
+html.dark-forest .theme-picker,
+html.dark-navy .theme-picker,
+html.dark-ember .theme-picker,
+html.dark-aurora .theme-picker,
+html.dark-walnut .theme-picker {
+    display: flex;
+}
+
+.theme-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-dot:hover {
+    transform: scale(1.25);
+}
+
+.theme-dot.active-theme {
+    border-color: var(--text-primary);
+    transform: scale(1.2);
+}
+
+.theme-dot[data-theme="dark-forest"]  { background: #3a8030; }
+.theme-dot[data-theme="dark-navy"]    { background: #2050a8; }
+.theme-dot[data-theme="dark-ember"]   { background: #c05020; }
+.theme-dot[data-theme="dark-aurora"]  { background: #20a090; }
+.theme-dot[data-theme="dark-walnut"]  { background: #a07020; }
+
+/* default dark dot (shown as "active" when no named theme) */
+.theme-dot-default {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #505050;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.theme-dot-default:hover { transform: scale(1.25); }
+.theme-dot-default.active-theme { border-color: var(--text-primary); transform: scale(1.2); }
 
 html {
     scroll-behavior: smooth;

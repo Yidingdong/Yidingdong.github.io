@@ -9,22 +9,59 @@ const themeToggle = document.querySelector('.theme-toggle');
 const themeText = document.querySelector('.theme-text');
 const html = document.documentElement;
 
-// Theme is applied early via inline <script> in <head> to prevent flash.
-// Here we only sync the button label.
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-    html.classList.add('dark-mode');
-    themeText.textContent = 'LIGHT';
-} else {
-    themeText.textContent = 'DARK';
+// ── THEME VARIANT CLASSES ──────────────────────────────────
+const DARK_VARIANTS = ['dark-forest', 'dark-navy', 'dark-ember', 'dark-aurora', 'dark-walnut'];
+const ALL_DARK_CLASSES = ['dark-mode', ...DARK_VARIANTS];
+
+function applyThemeVariant(variant) {
+    // Remove all dark classes first
+    ALL_DARK_CLASSES.forEach(c => html.classList.remove(c));
+    if (variant && variant !== 'light') {
+        html.classList.add(variant === 'dark' ? 'dark-mode' : variant);
+    }
+    updateThemePickerDots(variant);
+    updateThemeToggleLabel();
 }
 
-themeToggle.addEventListener('click', () => {
-    html.classList.toggle('dark-mode');
+function updateThemeToggleLabel() {
+    const isDark = ALL_DARK_CLASSES.some(c => html.classList.contains(c));
+    if (themeText) themeText.textContent = isDark ? 'LIGHT' : 'DARK';
+}
 
-    const theme = html.classList.contains('dark-mode') ? 'dark' : 'light';
-    themeText.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
-    localStorage.setItem('theme', theme);
+function updateThemePickerDots(variant) {
+    document.querySelectorAll('.theme-dot, .theme-dot-default').forEach(dot => {
+        dot.classList.remove('active-theme');
+        const dotTheme = dot.dataset.theme || 'dark';
+        if (dotTheme === variant) dot.classList.add('active-theme');
+    });
+}
+
+// Restore theme on load (applied early in <head> for the class, here we sync dots & label)
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyThemeVariant(savedTheme);
+
+// Dark toggle button — cycles between light and the last-used dark variant (or default dark)
+themeToggle.addEventListener('click', () => {
+    const isDark = ALL_DARK_CLASSES.some(c => html.classList.contains(c));
+    if (isDark) {
+        applyThemeVariant('light');
+        localStorage.setItem('theme', 'light');
+    } else {
+        // Re-apply the last used dark variant, default to 'dark'
+        const last = localStorage.getItem('lastDarkTheme') || 'dark';
+        applyThemeVariant(last);
+        localStorage.setItem('theme', last);
+    }
+});
+
+// Theme picker dots
+document.querySelectorAll('.theme-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+        const variant = dot.dataset.theme;
+        applyThemeVariant(variant);
+        localStorage.setItem('theme', variant);
+        localStorage.setItem('lastDarkTheme', variant);
+    });
 });
 
 const languageButtons = document.querySelectorAll('.lang-btn');
