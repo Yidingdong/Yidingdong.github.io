@@ -18,12 +18,11 @@ groups.forEach(group => {
     const header = group.querySelector('.timeline-group-header');
     const body   = group.querySelector('.timeline-group-body');
 
-    // Collapse after first paint so the transition plays and produces the peek effect on load
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            body.classList.add('collapsed');
-        });
-    });
+    // Collapse after a short delay so the browser paints the open state first,
+    // which makes the CSS transition play and produce the peek effect on load.
+    setTimeout(() => {
+        body.classList.add('collapsed');
+    }, 80);
 
     header.addEventListener('click', () => {
         const isOpen = group.classList.contains('open');
@@ -117,14 +116,10 @@ document.querySelectorAll('.timeline-item').forEach(item => {
 
 // ── ANTI-CHRONOLOGICAL ORDER ─────────────────────────────────────────────
 // Reverse group order (newest first) and items within each group.
-// NOTE: transitions are suppressed during DOM rearrangement so that
-// `appendChild` reinsertion doesn't trigger a collapse animation on load.
+// DOM reversal happens synchronously before first paint, so no transition
+// suppression is needed — the browser never sees an intermediate state.
 const groupsContainer = document.querySelector('.timeline-groups');
 if (groupsContainer) {
-    // Freeze transitions while rearranging so groups appear open immediately
-    const allBodies = document.querySelectorAll('.timeline-group-body');
-    allBodies.forEach(b => { b.style.transition = 'none'; });
-
     [...groupsContainer.querySelectorAll(':scope > .timeline-group')]
         .reverse()
         .forEach(g => groupsContainer.appendChild(g));
@@ -133,12 +128,5 @@ if (groupsContainer) {
         [...inner.querySelectorAll(':scope > .timeline-item')]
             .reverse()
             .forEach(item => inner.appendChild(item));
-    });
-
-    // Re-enable transitions after the browser has painted the new layout
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            allBodies.forEach(b => { b.style.transition = ''; });
-        });
     });
 }
