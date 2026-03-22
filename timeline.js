@@ -10,19 +10,33 @@
 // Handles: accordion groups, topic-tag filtering, scroll animations
 // ============================================================
 
+
+// ── ANTI-CHRONOLOGICAL ORDER ───────────────────────────────
+// Runs first, synchronously, before the browser paints anything.
+// Groups are reversed (newest first); items within each group too.
+
+const groupsContainer = document.querySelector('.timeline-groups');
+if (groupsContainer) {
+    [...groupsContainer.querySelectorAll(':scope > .timeline-group')]
+        .reverse()
+        .forEach(g => groupsContainer.appendChild(g));
+
+    document.querySelectorAll('.timeline-group-inner').forEach(inner => {
+        [...inner.querySelectorAll(':scope > .timeline-item')]
+            .reverse()
+            .forEach(item => inner.appendChild(item));
+    });
+}
+
+
 // ── ACCORDION ──────────────────────────────────────────────
+// Queried AFTER reversal so the NodeList reflects the new order.
 
 const groups = document.querySelectorAll('.timeline-group');
 
 groups.forEach(group => {
     const header = group.querySelector('.timeline-group-header');
     const body   = group.querySelector('.timeline-group-body');
-
-    // Collapse after a short delay so the browser paints the open state first,
-    // which makes the CSS transition play and produce the peek effect on load.
-    setTimeout(() => {
-        body.classList.add('collapsed');
-    }, 80);
 
     header.addEventListener('click', () => {
         const isOpen = group.classList.contains('open');
@@ -33,6 +47,25 @@ groups.forEach(group => {
             group.classList.add('open');
             body.classList.remove('collapsed');
         }
+    });
+});
+
+
+// ── INITIAL PEEK ANIMATION ─────────────────────────────────
+// On page load every group is open (1fr). We animate them all
+// shut to produce the intentional peek effect.
+//
+// Technique: inside a rAF (after first paint), call
+// `void body.offsetHeight` on each body to force a synchronous
+// layout reflow. This locks the browser's computed value at 1fr
+// for ALL groups — including those below the fold. Then
+// immediately adding 'collapsed' changes it to 0fr, so the
+// CSS transition (1fr → 0fr) fires reliably for every group.
+
+requestAnimationFrame(() => {
+    document.querySelectorAll('.timeline-group-body').forEach(body => {
+        void body.offsetHeight;          // lock in 1fr for this body
+        body.classList.add('collapsed'); // transition: 1fr → 0fr (peek)
     });
 });
 
@@ -112,21 +145,3 @@ document.querySelectorAll('.timeline-item').forEach(item => {
     item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(item);
 });
-
-
-// ── ANTI-CHRONOLOGICAL ORDER ─────────────────────────────────────────────
-// Reverse group order (newest first) and items within each group.
-// DOM reversal happens synchronously before first paint, so no transition
-// suppression is needed — the browser never sees an intermediate state.
-const groupsContainer = document.querySelector('.timeline-groups');
-if (groupsContainer) {
-    [...groupsContainer.querySelectorAll(':scope > .timeline-group')]
-        .reverse()
-        .forEach(g => groupsContainer.appendChild(g));
-
-    document.querySelectorAll('.timeline-group-inner').forEach(inner => {
-        [...inner.querySelectorAll(':scope > .timeline-item')]
-            .reverse()
-            .forEach(item => inner.appendChild(item));
-    });
-}
