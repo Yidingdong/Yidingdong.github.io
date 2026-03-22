@@ -556,23 +556,11 @@ html.dark-mode .detail-container {
     }
 
     .currently-item {
-        display: block;
         padding-top: 1.5rem;
     }
 
     .currently-item:first-child {
         padding-top: 0;
-    }
-
-    .currently-label,
-    .currently-value {
-        display: block;
-        line-height: 1.35;
-    }
-
-    .currently-label {
-        min-width: unset;
-        margin-bottom: 0.05rem;
     }
 
     .minicv-row {
@@ -681,23 +669,11 @@ html.dark-mode .detail-container {
     }
 
     .currently-item {
-        display: block;
         padding-top: 1.5rem;
     }
 
     .currently-item:first-child {
         padding-top: 0;
-    }
-
-    .currently-label,
-    .currently-value {
-        display: block;
-        line-height: 1.35;
-    }
-
-    .currently-label {
-        min-width: unset;
-        margin-bottom: 0.05rem;
     }
 
     .minicv-row {
@@ -1362,21 +1338,21 @@ html.dark-mode .sticky-content {
 
 .currently-item {
     display: flex;
-    gap: 1.5rem;
-    align-items: baseline;
+    flex-direction: column;
+    gap: 0.1rem;
 }
 
 .currently-label {
-    flex-shrink: 0;
     font-size: 0.9rem;
     color: var(--text-primary);
     font-weight: 600;
-    min-width: 200px;
+    line-height: 1.4;
 }
 
 .currently-value {
-    font-size: 0.95rem;
-    color: var(--text-primary);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
 .currently-updated {
