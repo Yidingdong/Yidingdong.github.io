@@ -948,15 +948,9 @@ html.dark-mode .detail-container {
 }
 
 .timeline-group-body {
-    display: grid;
-    grid-template-rows: 1fr;
     overflow: hidden;
-    transition: grid-template-rows 0.35s ease;
-}
-
-/* Collapsed state: 50px so the first item peeks out permanently */
-.timeline-group-body.collapsed {
-    grid-template-rows: 50px;
+    max-height: 50px; /* peek height — default collapsed state */
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-group-inner {
