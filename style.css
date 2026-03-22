@@ -958,6 +958,23 @@ html.dark-mode .detail-container {
     grid-template-rows: 0fr;
 }
 
+/* ── Initial peek animation ───────────────────────────────
+   Runs once on page load. Starts from collapsed (0fr),
+   expands to full height (1fr), holds briefly, then collapses.
+   The animation overrides the `collapsed` class while running;
+   once it ends the `collapsed` class (still on the element) takes over.
+   Stagger via animation-delay set per-group in timeline.js. */
+@keyframes timeline-peek {
+    0%   { grid-template-rows: 0fr; }
+    35%  { grid-template-rows: 1fr; }
+    65%  { grid-template-rows: 1fr; }
+    100% { grid-template-rows: 0fr; }
+}
+
+.timeline-group-body.peeking {
+    animation: timeline-peek 0.9s ease forwards;
+}
+
 .timeline-group-inner {
     overflow: hidden;
     padding: 1rem 0 0.5rem 0;
