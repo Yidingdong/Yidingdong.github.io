@@ -18,8 +18,8 @@ groups.forEach(group => {
     const header = group.querySelector('.timeline-group-header');
     const body   = group.querySelector('.timeline-group-body');
 
-    // Groups start with 'open' in HTML — brief visible peek, then animate closed
-    setTimeout(() => body.classList.add('collapsed'), 300);
+    // All groups start open
+    group.classList.add('open');
 
     header.addEventListener('click', () => {
         const isOpen = group.classList.contains('open');
@@ -69,11 +69,9 @@ filterButtons.forEach(btn => {
             body.classList.remove('collapsed');
         });
 
-        // Scroll to first VISIBLE group that has matching items.
-        // Must query the live DOM (after anti-chronological reversal) — not the stale NodeList.
+        // Scroll to first group that has matching items
         if (filter !== 'all') {
-            const liveGroups = [...document.querySelectorAll('.timeline-group')];
-            const firstMatch = liveGroups.find(group => {
+            const firstMatch = [...groups].find(group => {
                 const items = group.querySelectorAll('.timeline-item[data-tags]');
                 return [...items].some(i => i.style.display !== 'none');
             });
