@@ -53,83 +53,88 @@ html.dark-mode {
 }
 
 /* ── THEME: Forest ─────────────────────────────────────────
-   Deep forest green, warm sage accents, cream text           */
+   Near-black green base · rich saturated moss surface
+   Inspired by: Linear, Vercel dark (green variant)           */
 html.dark-forest {
-    --bg-color: #0d1a0f;
-    --surface-color: #172314;
-    --text-primary: #e8f0e0;
-    --text-secondary: #92b085;
-    --border-color: #2d4a28;
-    --accent-color: #a8d48a;
-    --marker-color: #a8d48a;
-    --note-bg-1: #1a2e14;
-    --note-bg-2: #142410;
-    --note-bg-3: #1e3318;
-    --note-bg-4: #162a12;
+    --bg-color: #0c1a0e;
+    --surface-color: #184020;
+    --text-primary: #d4eed0;
+    --text-secondary: #70b870;
+    --border-color: #2a6032;
+    --accent-color: #50c858;
+    --marker-color: #50c858;
+    --note-bg-1: #1a4a20;
+    --note-bg-2: #143818;
+    --note-bg-3: #1e5024;
+    --note-bg-4: #16421c;
 }
 
-/* ── THEME: Midnight ───────────────────────────────────────
-   Deep navy blue, pale blue-white text, cobalt highlights    */
+/* ── THEME: Ocean ──────────────────────────────────────────
+   Near-black indigo base · deep royal blue surface
+   Inspired by: Tailwind UI dark, Stripe dark dashboard       */
 html.dark-navy {
-    --bg-color: #080e1f;
-    --surface-color: #101828;
-    --text-primary: #dce8ff;
-    --text-secondary: #7898cc;
-    --border-color: #1e3060;
-    --accent-color: #7ab0ff;
-    --marker-color: #7ab0ff;
-    --note-bg-1: #101c38;
-    --note-bg-2: #0c1830;
-    --note-bg-3: #0e1a34;
-    --note-bg-4: #12203e;
+    --bg-color: #090d1e;
+    --surface-color: #142050;
+    --text-primary: #c8d8ff;
+    --text-secondary: #6888d8;
+    --border-color: #203070;
+    --accent-color: #5080ff;
+    --marker-color: #5080ff;
+    --note-bg-1: #182860;
+    --note-bg-2: #102050;
+    --note-bg-3: #1c2e6a;
+    --note-bg-4: #142458;
 }
 
-/* ── THEME: Ember ──────────────────────────────────────────
-   Charcoal base, deep reddish-brown surface, warm amber text */
+/* ── THEME: Cayenne ────────────────────────────────────────
+   Near-black crimson base · deep red surface · warm rose text
+   Inspired by: YouTube Studio dark, Figma's deep red accents */
 html.dark-ember {
-    --bg-color: #180d08;
-    --surface-color: #261410;
-    --text-primary: #f5dcc0;
-    --text-secondary: #c08858;
-    --border-color: #4a2018;
-    --accent-color: #e8a060;
-    --marker-color: #e8a060;
-    --note-bg-1: #2e1810;
-    --note-bg-2: #22100a;
-    --note-bg-3: #321a0e;
-    --note-bg-4: #281408;
+    --bg-color: #150a08;
+    --surface-color: #3a1010;
+    --text-primary: #f5ddd8;
+    --text-secondary: #c07068;
+    --border-color: #602020;
+    --accent-color: #e06040;
+    --marker-color: #e06040;
+    --note-bg-1: #441818;
+    --note-bg-2: #380f0f;
+    --note-bg-3: #4a1c1c;
+    --note-bg-4: #3e1414;
 }
 
-/* ── THEME: Aurora ─────────────────────────────────────────
-   Dark teal-slate base, ghostly cyan-mint accents            */
+/* ── THEME: Violet ─────────────────────────────────────────
+   Near-black purple base · deep rich indigo surface
+   Inspired by: Notion dark, Loom, GitHub Copilot UI          */
 html.dark-aurora {
-    --bg-color: #080f14;
-    --surface-color: #0f1e26;
-    --text-primary: #d0f0ec;
-    --text-secondary: #5db8b0;
-    --border-color: #164040;
-    --accent-color: #60d8c8;
-    --marker-color: #60d8c8;
-    --note-bg-1: #0e2428;
-    --note-bg-2: #0a1c20;
-    --note-bg-3: #102830;
-    --note-bg-4: #0c2024;
+    --bg-color: #0c0814;
+    --surface-color: #241848;
+    --text-primary: #ddd0ff;
+    --text-secondary: #9878d0;
+    --border-color: #402878;
+    --accent-color: #8050e8;
+    --marker-color: #9060f8;
+    --note-bg-1: #2c2060;
+    --note-bg-2: #201852;
+    --note-bg-3: #302468;
+    --note-bg-4: #261c58;
 }
 
-/* ── THEME: Walnut ─────────────────────────────────────────
-   Deep warm brown-black, golden sepia tones, dark wood feel  */
+/* ── THEME: Amber ──────────────────────────────────────────
+   Near-black brown base · deep rich amber/dune surface
+   Inspired by: Obsidian app dark, Bear app, warm editorial   */
 html.dark-walnut {
-    --bg-color: #120c06;
-    --surface-color: #1e1409;
-    --text-primary: #f0ddb0;
-    --text-secondary: #b09050;
-    --border-color: #3a2810;
-    --accent-color: #d4a840;
-    --marker-color: #d4a840;
-    --note-bg-1: #2a1c0a;
-    --note-bg-2: #221606;
-    --note-bg-3: #2e2008;
-    --note-bg-4: #26180a;
+    --bg-color: #0e0900;
+    --surface-color: #3a2400;
+    --text-primary: #f8ead0;
+    --text-secondary: #c09040;
+    --border-color: #503400;
+    --accent-color: #f0a820;
+    --marker-color: #f0a820;
+    --note-bg-1: #462c00;
+    --note-bg-2: #382400;
+    --note-bg-3: #4e3000;
+    --note-bg-4: #3e2800;
 }
 
 /* ── THEME PICKER ──────────────────────────────────────────
@@ -169,11 +174,11 @@ html.dark-walnut .theme-picker {
     transform: scale(1.2);
 }
 
-.theme-dot[data-theme="dark-forest"]  { background: #3a8030; }
-.theme-dot[data-theme="dark-navy"]    { background: #2050a8; }
-.theme-dot[data-theme="dark-ember"]   { background: #c05020; }
-.theme-dot[data-theme="dark-aurora"]  { background: #20a090; }
-.theme-dot[data-theme="dark-walnut"]  { background: #a07020; }
+.theme-dot[data-theme="dark-forest"]  { background: #2a9050; }
+.theme-dot[data-theme="dark-navy"]    { background: #2060d0; }
+.theme-dot[data-theme="dark-ember"]   { background: #c03020; }
+.theme-dot[data-theme="dark-aurora"]  { background: #7030e0; }
+.theme-dot[data-theme="dark-walnut"]  { background: #d09020; }
 
 /* default dark dot (shown as "active" when no named theme) */
 .theme-dot-default {
