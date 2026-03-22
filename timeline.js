@@ -66,6 +66,8 @@ groups.forEach(group => {
             // Expand: measure actual content height and animate to it
             group.classList.add('open');
             body.style.maxHeight = body.scrollHeight + 'px';
+            // Arm the scroll-in animation for items in this group (first open only)
+            group.querySelectorAll('.timeline-item').forEach(setupItemAnimation);
         }
     });
 });
@@ -104,6 +106,7 @@ filterButtons.forEach(btn => {
             placeholder.hidden = (visibleCount > 0 || filter === 'all');
             group.classList.add('open');
             body.style.maxHeight = body.scrollHeight + 'px';
+            group.querySelectorAll('.timeline-item').forEach(setupItemAnimation);
         });
 
         // Scroll to first group that has matching items
@@ -125,6 +128,8 @@ filterButtons.forEach(btn => {
 
 
 // ── SCROLL ANIMATION ───────────────────────────────────────
+// Items start visible on load so peek areas always render on first
+// paint. Animation is armed per-group the first time each group opens.
 
 const observerOptions = {
     threshold: 0.1,
@@ -140,9 +145,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.timeline-item').forEach(item => {
+const animatedItems = new WeakSet();
+
+function setupItemAnimation(item) {
+    if (animatedItems.has(item)) return;
+    animatedItems.add(item);
     item.style.opacity = '0';
     item.style.transform = 'translateX(-20px)';
     item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(item);
-});
+}
