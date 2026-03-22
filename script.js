@@ -9,59 +9,25 @@ const themeToggle = document.querySelector('.theme-toggle');
 const themeText = document.querySelector('.theme-text');
 const html = document.documentElement;
 
-// ── THEME VARIANT CLASSES ──────────────────────────────────
-const DARK_VARIANTS = ['dark-forest', 'dark-navy', 'dark-ember', 'dark-aurora', 'dark-walnut'];
-const ALL_DARK_CLASSES = ['dark-mode', ...DARK_VARIANTS];
-
-function applyThemeVariant(variant) {
-    // Remove all dark classes first
-    ALL_DARK_CLASSES.forEach(c => html.classList.remove(c));
-    if (variant && variant !== 'light') {
-        html.classList.add(variant === 'dark' ? 'dark-mode' : variant);
-    }
-    updateThemePickerDots(variant);
-    updateThemeToggleLabel();
-}
-
-function updateThemeToggleLabel() {
-    const isDark = ALL_DARK_CLASSES.some(c => html.classList.contains(c));
-    if (themeText) themeText.textContent = isDark ? 'LIGHT' : 'DARK';
-}
-
-function updateThemePickerDots(variant) {
-    document.querySelectorAll('.theme-dot, .theme-dot-default').forEach(dot => {
-        dot.classList.remove('active-theme');
-        const dotTheme = dot.dataset.theme || 'dark';
-        if (dotTheme === variant) dot.classList.add('active-theme');
-    });
-}
-
-// Restore theme on load (applied early in <head> for the class, here we sync dots & label)
+// Restore theme on load
 const savedTheme = localStorage.getItem('theme') || 'light';
-applyThemeVariant(savedTheme);
+if (savedTheme === 'dark') {
+    html.classList.add('dark-mode');
+    if (themeText) themeText.textContent = 'LIGHT';
+}
 
-// Dark toggle button — cycles between light and the last-used dark variant (or default dark)
+// Dark toggle button
 themeToggle.addEventListener('click', () => {
-    const isDark = ALL_DARK_CLASSES.some(c => html.classList.contains(c));
+    const isDark = html.classList.contains('dark-mode');
     if (isDark) {
-        applyThemeVariant('light');
+        html.classList.remove('dark-mode');
+        if (themeText) themeText.textContent = 'DARK';
         localStorage.setItem('theme', 'light');
     } else {
-        // Re-apply the last used dark variant, default to 'dark'
-        const last = localStorage.getItem('lastDarkTheme') || 'dark';
-        applyThemeVariant(last);
-        localStorage.setItem('theme', last);
+        html.classList.add('dark-mode');
+        if (themeText) themeText.textContent = 'LIGHT';
+        localStorage.setItem('theme', 'dark');
     }
-});
-
-// Theme picker dots
-document.querySelectorAll('.theme-dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-        const variant = dot.dataset.theme;
-        applyThemeVariant(variant);
-        localStorage.setItem('theme', variant);
-        localStorage.setItem('lastDarkTheme', variant);
-    });
 });
 
 const languageButtons = document.querySelectorAll('.lang-btn');

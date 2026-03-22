@@ -8,7 +8,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <script>(function(){var t=localStorage.getItem('theme');var v=['dark','dark-forest','dark-navy','dark-ember','dark-aurora','dark-walnut'];if(t==='dark')document.documentElement.classList.add('dark-mode');else if(v.indexOf(t)>-1)document.documentElement.classList.add(t);})();</script>
+    <script>(function(){if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark-mode');})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Yiding Ma's Lebensweg als Zeitstrahl – Königin-Katharina-Stift, HLRS-Stipendium, FTC, Projekte und mehr.">
     <meta name="author" content="Yiding Ma">
@@ -36,13 +36,6 @@
                         <button class="lang-btn active" data-lang="de">DE</button>
                         <button class="lang-btn" data-lang="en">EN</button>
                         <button class="lang-btn" data-lang="zh">中文</button>
-                    </div>
-                    <div class="theme-picker" aria-label="Farbschema wählen">
-                        <button class="theme-dot" data-theme="dark-forest"     title="Forest"      aria-label="Forest"></button>
-                        <button class="theme-dot" data-theme="dark-navy"       title="Midnight"    aria-label="Midnight"></button>
-                        <button class="theme-dot" data-theme="dark-ember"      title="Ember"       aria-label="Ember"></button>
-                        <button class="theme-dot" data-theme="dark-aurora"     title="Aurora"      aria-label="Aurora"></button>
-                        <button class="theme-dot" data-theme="dark-walnut"     title="Walnut"      aria-label="Walnut"></button>
                     </div>
                     <button class="theme-toggle" aria-label="Toggle Dark Mode">
                         <span class="theme-text">DARK</span>
@@ -87,7 +80,7 @@
             <div class="timeline-groups">
 
                 <!-- ── GROUP 1: Kindheit ── -->
-                <div class="timeline-group" id="group-childhood">
+                <div class="timeline-group open" id="group-childhood">
                     <button class="timeline-group-header">
                         <span class="group-title" data-de="Kindheit" data-en="Childhood" data-zh="童年">Kindheit</span>
                         <span class="group-period">2008 – 2014</span>
@@ -143,7 +136,7 @@
                 </div>
 
                 <!-- ── GROUP 2: Grundschule ── -->
-                <div class="timeline-group" id="group-primary">
+                <div class="timeline-group open" id="group-primary">
                     <button class="timeline-group-header">
                         <span class="group-title" data-de="Grundschule" data-en="Primary School" data-zh="小学">Grundschule</span>
                         <span class="group-period">2014 – 2018</span>
@@ -219,7 +212,7 @@
                 </div>
 
                 <!-- ── GROUP 3: Gymnasium – Mittelstufe ── -->
-                <div class="timeline-group" id="group-gymnasium">
+                <div class="timeline-group open" id="group-gymnasium">
                     <button class="timeline-group-header">
                         <span class="group-title" data-de="Gymnasium" data-en="Gymnasium" data-zh="初中">Gymnasium</span>
                         <span class="group-period">2018 – 2024</span>
@@ -295,7 +288,7 @@
                 </div>
 
                 <!-- ── GROUP 4: Oberstufe / Senior Years ── -->
-                <div class="timeline-group" id="group-senior">
+                <div class="timeline-group open" id="group-senior">
                     <button class="timeline-group-header">
                         <span class="group-title" data-de="gymnasiale Oberstufe" data-en="Senior Years" data-zh="高中">gymnasiale Oberstufe</span>
                         <span class="group-period">2024 – 2026</span>
