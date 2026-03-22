@@ -36,6 +36,7 @@
 }
 
 html.dark-mode {
+    /* Dark Mode Colors */
     --bg-color: #1a1a1a;
     --surface-color: #2a2a2a;
     --text-primary: #ffffff;
@@ -43,6 +44,8 @@ html.dark-mode {
     --border-color: #404040;
     --accent-color: #e0e0e0;
     --marker-color: #ffffff;
+
+    /* Sticky note colors (dark mode) */
     --note-bg-1: #3d2e1e;
     --note-bg-2: #2f2118;
     --note-bg-3: #352618;
@@ -252,7 +255,7 @@ body {
 }
 
 html.dark-mode .timeline-content:hover {
-    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 .timeline-year {
@@ -948,7 +951,6 @@ html.dark-mode .detail-container {
     display: grid;
     grid-template-rows: 1fr;
     overflow: hidden;
-    position: relative;
     transition: grid-template-rows 0.35s ease;
 }
 

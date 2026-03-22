@@ -9,25 +9,22 @@ const themeToggle = document.querySelector('.theme-toggle');
 const themeText = document.querySelector('.theme-text');
 const html = document.documentElement;
 
-// Restore theme on load
-const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') {
+// Theme is applied early via inline <script> in <head> to prevent flash.
+// Here we only sync the button label.
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
-    if (themeText) themeText.textContent = 'LIGHT';
+    themeText.textContent = 'LIGHT';
+} else {
+    themeText.textContent = 'DARK';
 }
 
-// Dark toggle button
 themeToggle.addEventListener('click', () => {
-    const isDark = html.classList.contains('dark-mode');
-    if (isDark) {
-        html.classList.remove('dark-mode');
-        if (themeText) themeText.textContent = 'DARK';
-        localStorage.setItem('theme', 'light');
-    } else {
-        html.classList.add('dark-mode');
-        if (themeText) themeText.textContent = 'LIGHT';
-        localStorage.setItem('theme', 'dark');
-    }
+    html.classList.toggle('dark-mode');
+
+    const theme = html.classList.contains('dark-mode') ? 'dark' : 'light';
+    themeText.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
+    localStorage.setItem('theme', theme);
 });
 
 const languageButtons = document.querySelectorAll('.lang-btn');
