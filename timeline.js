@@ -51,23 +51,6 @@ groups.forEach(group => {
 });
 
 
-// ── INITIAL PEEK ANIMATION ─────────────────────────────────
-// Groups start with `collapsed` in HTML (0fr). Adding `peeking`
-// triggers a CSS @keyframes animation (0fr → 1fr → 0fr) that
-// is fully independent of paint timing — works for every group
-// regardless of viewport position. Groups are staggered by 120ms.
-// On `animationend`, `peeking` is removed; `collapsed` takes over.
-
-document.querySelectorAll('.timeline-group-body').forEach((body, i) => {
-    body.style.animationDelay = (i * 120) + 'ms';
-    body.classList.add('peeking');
-    body.addEventListener('animationend', () => {
-        body.classList.remove('peeking');
-        body.style.animationDelay = '';
-    }, { once: true });
-});
-
-
 // ── TAG FILTER ─────────────────────────────────────────────
 
 const filterButtons = document.querySelectorAll('.filter-tag');
