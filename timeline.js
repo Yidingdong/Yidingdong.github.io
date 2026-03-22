@@ -112,9 +112,15 @@ document.querySelectorAll('.timeline-item').forEach(item => {
 
 
 // ── ANTI-CHRONOLOGICAL ORDER ─────────────────────────────────────────────
-// Reverse group order (newest first) and items within each group
+// Reverse group order (newest first) and items within each group.
+// NOTE: transitions are suppressed during DOM rearrangement so that
+// `appendChild` reinsertion doesn't trigger a collapse animation on load.
 const groupsContainer = document.querySelector('.timeline-groups');
 if (groupsContainer) {
+    // Freeze transitions while rearranging so groups appear open immediately
+    const allBodies = document.querySelectorAll('.timeline-group-body');
+    allBodies.forEach(b => { b.style.transition = 'none'; });
+
     [...groupsContainer.querySelectorAll(':scope > .timeline-group')]
         .reverse()
         .forEach(g => groupsContainer.appendChild(g));
@@ -123,5 +129,12 @@ if (groupsContainer) {
         [...inner.querySelectorAll(':scope > .timeline-item')]
             .reverse()
             .forEach(item => inner.appendChild(item));
+    });
+
+    // Re-enable transitions after the browser has painted the new layout
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            allBodies.forEach(b => { b.style.transition = ''; });
+        });
     });
 }
