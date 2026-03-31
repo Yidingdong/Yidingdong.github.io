@@ -52,6 +52,11 @@ function setLanguage(lang) {
             element.innerHTML = text;
         }
     });
+
+    // Show/hide elements that are only relevant for a specific language
+    document.querySelectorAll('[data-lang-show]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang-show') === lang ? '' : 'none';
+    });
 }
 
 function updateActiveButton(lang) {

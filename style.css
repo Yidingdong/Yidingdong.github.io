@@ -1511,6 +1511,13 @@ html.dark-mode .sticky-content {
     text-decoration: underline;
 }
 
+.section-wip-notice {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
 .skill-cats {
     display: flex;
     flex-direction: column;
