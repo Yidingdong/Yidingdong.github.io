@@ -308,8 +308,14 @@ html.dark-mode .timeline-content:hover {
     position: relative;
 }
 
+@keyframes detail-fade-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 .detail-view:target {
     display: block;
+    animation: detail-fade-in 0.4s ease forwards;
 }
 
 /* Hide header, timeline and footer when detail view is active */
