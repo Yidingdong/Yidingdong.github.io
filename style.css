@@ -1512,11 +1512,9 @@ html.dark-mode .sticky-content {
 }
 
 .skill-cat-title {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin-bottom: 0.4rem;
 }
 
@@ -1653,11 +1651,9 @@ html.dark-mode .sticky-content {
 }
 
 .week-irregular-heading {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin-bottom: 0.35rem;
 }
 
