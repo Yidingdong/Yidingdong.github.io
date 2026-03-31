@@ -1505,6 +1505,26 @@ html.dark-mode .sticky-content {
     text-decoration: underline;
 }
 
+.skill-cats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.skill-cat-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.skill-level {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
 /* === Currently Active list === */
 .active-list {
     list-style: none;
@@ -1626,6 +1646,42 @@ html.dark-mode .sticky-content {
 
 .wc-cell--dim {
     opacity: 0.55;
+}
+
+.week-irregular {
+    margin-top: 0.9rem;
+}
+
+.week-irregular-heading {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+}
+
+.week-irregular-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.week-irregular-item {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    align-items: baseline;
+}
+
+.week-irregular-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.week-irregular-hours {
+    color: var(--text-secondary);
 }
 
 
