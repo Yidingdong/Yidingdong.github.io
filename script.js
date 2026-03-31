@@ -77,10 +77,15 @@ if (window.location.hash) {
     const lang = localStorage.getItem('language') || 'de';
     setLanguage(lang);
     // When arriving from an external context (e.g. skills section on index.html),
-    // prevent the browser's automatic scroll-to-hash so the card shows from the top.
+    // scroll back to top after the browser's own hash-scroll has fired.
+    // Two nested rAFs ensure we run after the post-paint anchor-scroll.
     if (new URLSearchParams(window.location.search).get('ref')) {
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        window.scrollTo(0, 0);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            });
+        });
     }
 }
 
