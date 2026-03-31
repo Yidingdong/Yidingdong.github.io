@@ -155,3 +155,26 @@ function setupItemAnimation(item) {
     item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(item);
 }
+
+
+// ── BACK BUTTON CONTEXT (from skills on index.html) ─────────────────
+// When arriving via timeline.html?ref=skills#FTC (or #HLRS), adjust the
+// back button so it returns to Mein Skillset on index.html instead of
+// closing the card within the timeline.
+
+const refParam = new URLSearchParams(window.location.search).get('ref');
+if (refParam === 'skills') {
+    const backLabels = {
+        de: '← Zurück zu Mein Skillset',
+        en: '← Back to My Skills',
+        zh: '← 返回技能页'
+    };
+    document.querySelectorAll('#FTC .back-btn, #HLRS .back-btn').forEach(btn => {
+        btn.setAttribute('href', 'index.html#skills');
+        btn.setAttribute('data-de', backLabels.de);
+        btn.setAttribute('data-en', backLabels.en);
+        btn.setAttribute('data-zh', backLabels.zh);
+    });
+    // Re-apply language so the updated text renders immediately
+    setLanguage(localStorage.getItem('language') || 'de');
+}
