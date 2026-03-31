@@ -179,25 +179,79 @@ if (refParam === 'skills') {
     setLanguage(localStorage.getItem('language') || 'de');
 }
 
-// ── BACK BUTTON TRANSITIONS ─────────────────────────────────────────
-// Fades the page out before navigating away from a detail view.
-document.querySelectorAll('.back-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-        const href = btn.getAttribute('href');
-        if (!href) return;
-        e.preventDefault();
+// ── DETAIL VIEW OVERLAY ─────────────────────────────────────────────
+// Cards open as full-screen overlays over the timeline.
 
-        document.body.style.transition = 'opacity 0.25s ease';
-        document.body.style.opacity = '0';
+function openOverlay(id) {
+    const panel = document.getElementById(id);
+    if (!panel?.classList.contains('detail-view')) return;
+    panel.scrollTop = 0;
+    panel.classList.add('is-open');
+    history.pushState({ overlay: id }, '', '#' + id);
+}
 
-        setTimeout(() => {
-            window.location.href = href;
-            // For same-page (hash-only) navigation, fade back in after the DOM settles
-            if (!href.includes('.html')) {
-                requestAnimationFrame(() => requestAnimationFrame(() => {
-                    document.body.style.opacity = '1';
-                }));
-            }
-        }, 260);
+function closeOverlay(panel, destination) {
+    if (!panel) return;
+    panel.classList.remove('is-open');
+    if (destination) {
+        panel.addEventListener('transitionend', () => {
+            window.location.href = destination;
+        }, { once: true });
+    }
+}
+
+// Open on timeline card click
+document.querySelectorAll('.timeline-content[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+        const id = link.getAttribute('href').slice(1);
+        if (document.getElementById(id)?.classList.contains('detail-view')) {
+            e.preventDefault();
+            openOverlay(id);
+        }
     });
 });
+
+// Close on back-button click
+document.querySelectorAll('.back-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        const href = btn.getAttribute('href') || '';
+        const panel = btn.closest('.detail-view');
+        if (href && href !== '#') {
+            closeOverlay(panel, href);
+        } else {
+            panel.classList.remove('is-open');
+            history.back();
+        }
+    });
+});
+
+// ESC closes overlay
+document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const open = document.querySelector('.detail-view.is-open');
+    if (!open) return;
+    const href = open.querySelector('.back-btn')?.getAttribute('href') || '';
+    if (href && href !== '#') {
+        closeOverlay(open, href);
+    } else {
+        open.classList.remove('is-open');
+        history.back();
+    }
+});
+
+// Browser back-button closes overlay
+window.addEventListener('popstate', () => {
+    const open = document.querySelector('.detail-view.is-open');
+    if (open) open.classList.remove('is-open');
+});
+
+// Deep-link on initial page load (e.g. timeline.html?ref=skills#FTC)
+const initHash = window.location.hash.slice(1);
+if (initHash) {
+    const initEl = document.getElementById(initHash);
+    if (initEl?.classList.contains('detail-view')) {
+        initEl.classList.add('is-open');
+        initEl.scrollTop = 0;
+    }
+}
