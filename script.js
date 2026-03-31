@@ -76,17 +76,6 @@ window.addEventListener('hashchange', () => {
 if (window.location.hash) {
     const lang = localStorage.getItem('language') || 'de';
     setLanguage(lang);
-    // When arriving from an external context (e.g. skills section on index.html),
-    // scroll back to top after the browser's own hash-scroll has fired.
-    // Two nested rAFs ensure we run after the post-paint anchor-scroll.
-    if (new URLSearchParams(window.location.search).get('ref')) {
-        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                window.scrollTo({ top: 0, behavior: 'instant' });
-            });
-        });
-    }
 }
 
 // ── MOBILE NAV TOGGLE ──────────────────────────────────────────────────────
