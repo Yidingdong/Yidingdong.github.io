@@ -178,3 +178,26 @@ if (refParam === 'skills') {
     // Re-apply language so the updated text renders immediately
     setLanguage(localStorage.getItem('language') || 'de');
 }
+
+// ── BACK BUTTON TRANSITIONS ─────────────────────────────────────────
+// Fades the page out before navigating away from a detail view.
+document.querySelectorAll('.back-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+        const href = btn.getAttribute('href');
+        if (!href) return;
+        e.preventDefault();
+
+        document.body.style.transition = 'opacity 0.25s ease';
+        document.body.style.opacity = '0';
+
+        setTimeout(() => {
+            window.location.href = href;
+            // For same-page (hash-only) navigation, fade back in after the DOM settles
+            if (!href.includes('.html')) {
+                requestAnimationFrame(() => requestAnimationFrame(() => {
+                    document.body.style.opacity = '1';
+                }));
+            }
+        }, 260);
+    });
+});
