@@ -310,12 +310,6 @@ html.dark-mode .timeline-content:hover {
 
 .detail-view:target {
     display: block;
-    position: fixed;
-    inset: 0;
-    overflow-y: auto;
-    z-index: 99; /* below sticky header (z-index 100) so header stays visible */
-    background-color: var(--surface-color);
-    padding-top: 0;
 }
 
 /* Hide timeline and footer when detail view is active */
