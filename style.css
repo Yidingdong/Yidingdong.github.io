@@ -312,7 +312,8 @@ html.dark-mode .timeline-content:hover {
     display: block;
 }
 
-/* Hide timeline and footer when detail view is active */
+/* Hide header, timeline and footer when detail view is active */
+body:has(.detail-view:target) .header,
 body:has(.detail-view:target) #timeline-view,
 body:has(.detail-view:target) .footer {
     display: none;
