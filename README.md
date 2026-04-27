@@ -24,8 +24,9 @@ Two-branch setup:
 - `main` — development branch (all work and commits go here)
 - `master` — production / GitHub Pages (live site at itsyid.com)
 
-> **⚠ IMPORTANT: When the user says "push", they mean push to `master` so the live site is updated.**
-> This always involves two steps: commit+push to `main`, then sync to `master`.
+> **⚠ IMPORTANT: Never interpret "push" as a direct push to `master`.**
+> If the user says only "push", that means push the current work to main only.
+> Only update the live site / master if the user explicitly says "deploy", "publish", or "sync to master".
 
 Full sync command:
 ```powershell
