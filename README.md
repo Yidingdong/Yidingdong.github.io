@@ -203,3 +203,15 @@ See TODO.md for detailed placeholder tracker.
 **Technical / manual:**
 - [ ] Avatar / Strichmännchen when ready
 - [ ] Publish Cellios / HTML-AG materials before linking from detail views
+
+## GitHub-side history protection
+
+The website repository is protected against accidental history destruction on GitHub.
+
+Confirmed server-side rulesets:
+
+- main: protected against branch deletion and non-fast-forward / force-push updates.
+- master: protected against branch deletion and non-fast-forward / force-push updates.
+- Bypass lists are intentionally empty; the OpenClaw collaborator account must not be allowed to bypass these rules.
+
+This means OpenClaw may still create normal commits, but it must not be able to delete these branches or rewrite their Git history on GitHub.
