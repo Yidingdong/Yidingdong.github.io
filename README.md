@@ -215,3 +215,13 @@ Confirmed server-side rulesets:
 - Bypass lists are intentionally empty; the OpenClaw collaborator account must not be allowed to bypass these rules.
 
 This means OpenClaw may still create normal commits, but it must not be able to delete these branches or rewrite their Git history on GitHub.
+
+## Temporary section visibility — 16 October 2026
+
+The owner requested that unfinished sections disappear from the live website until they are updated. The existing content is preserved.
+
+- `data-under-review` hides the four homepage content sections, the timeline (including detail overlays), Blog, Ideas, and their navigation links on every page.
+- The shared CSS rule `[data-under-review] { display: none !important; }` hides content before JavaScript runs and prevents language, filtering, or mobile-navigation scripts from revealing it.
+- Name, greeting, language/theme controls, Home link, footer contact information, and the 404 message remain visible.
+- Remove `data-under-review` from a section and its navigation link after its content is ready. Timeline overlays must also have their marker removed when restored.
+- The separate `/FA-Counter/` GitHub Pages project is unaffected.
