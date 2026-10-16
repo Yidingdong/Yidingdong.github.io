@@ -225,3 +225,4 @@ The owner requested that unfinished sections disappear from the live website unt
 - Name, greeting, language/theme controls, Home link, footer contact information, and the 404 message remain visible.
 - Remove `data-under-review` from a section and its navigation link after its content is ready. Timeline overlays must also have their marker removed when restored.
 - The separate `/FA-Counter/` GitHub Pages project is unaffected.
+- The stylesheet URL is versioned for this visibility change so returning visitors receive the hiding rule immediately after refreshing.
